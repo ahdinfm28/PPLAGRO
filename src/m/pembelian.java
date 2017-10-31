@@ -40,7 +40,7 @@ public class pembelian extends func {
 
     public boolean insertBuah(int idBeli, String idPlayer, int idBuah, int idKualitas, int harga, int stok) {
         String query = "INSERT INTO `pembelianbuah`(`idBeliBuah`, `idPlayer`, "
-                + "`idBuah`, `idKualitas`, `Harga`, `Stok`) VALUES ('" + idBeli + "','" + idPlayer + "','" + idBuah + "','" + idKualitas + "','" + harga + "','" + stok + "')";
+                + "`idBuah`, `idKualitas`, `Harga`, `JumlahBeli`) VALUES ('" + idBeli + "','" + idPlayer + "','" + idBuah + "','" + idKualitas + "','" + harga + "','" + stok + "')";
         System.out.println(query);
         return getStatusQuery(query);
     }

@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import m.aset;
 import m.pembelian;
+import m.player;
 import v.mainmenu;
 import v.map;
 import v.pasarmap;
@@ -33,11 +34,13 @@ public class mapc {
     aset maset;
     pembelian mharga;
     int number;
+    player mplayer;
 
     public mapc(String username) throws SQLException {
         this.username = username;
         this.maset = new aset();
         this.vmap = new map();
+        this.mplayer = new player();
         this.mharga = new pembelian();
         vmap.setVisible(true);
         vmap.klikKembali(new acttombolkembali());
@@ -47,6 +50,21 @@ public class mapc {
         vmap.setUang(maset.getUang(username) + "");
         vmap.setNama(username);
         System.out.println(username);
+        vmap.invisibleTombol();
+        vmap.enabledRumah();
+    }
+
+    public mapc(String username, map v) throws SQLException {
+        this.vmap = v;
+        v.setVisible(true);
+        this.username = username;
+        this.maset = new aset();
+        this.mplayer = new player();
+        this.mharga = new pembelian();
+        vmap.klikLanjut(new acttombollanjut());
+        vmap.klikPermainanBaru(new acttombolnewgame());
+        vmap.setNama(username);
+        vmap.disabledRumah();
     }
 
     private class acttombolkembali implements ActionListener {
@@ -63,6 +81,34 @@ public class mapc {
         }
     }
 
+    private class acttombollanjut implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+               new mapc(username);
+            } catch (SQLException ex) {
+                Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    private class acttombolnewgame implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                maset.resetPembelianBahan(mplayer.getIdPlayer(username));
+                maset.resetPembelianBuah(mplayer.getIdPlayer(username));
+                maset.resetUang(mplayer.getIdPlayer(username));
+                new mapc(username);
+                // vmap.setUang(maset.getUang(username) + "");
+            } catch (SQLException ex) {
+                Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
     private class actTombolPasar implements MouseListener {
 
         @Override
@@ -70,7 +116,7 @@ public class mapc {
             try {
                 pasarmap v = new pasarmap();
                 pasarc c = new pasarc(username);
-                Random();
+                RandomHarga();
                 vmap.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
@@ -154,10 +200,10 @@ public class mapc {
         }
     }
 
-    public int Random() {
+    public int RandomHarga() {
         Random random = new Random();
         for (int counter = 1; counter <= 1; counter++) {
-            number = 1+random.nextInt(3);
+            number = 1 + random.nextInt(3);
         }
         System.out.println(number);
         if (number == 1) {
@@ -172,7 +218,7 @@ public class mapc {
             mharga.deleteHarga();
             mharga.insertHarga3();
             System.out.println("harga3 diinputkan");
-        }
-          return number;
+        } 
+        return number;
     }
 }

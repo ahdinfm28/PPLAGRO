@@ -32,6 +32,51 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         return text;
     }
 
+    public int setJmlMangga(int text) {
+        this.jmlmangga.setText(text + "");
+        return text;
+    }
+
+    public int setJmlSemangka(int text) {
+        this.jmlsemangka.setText(text + "");
+        return text;
+    }
+
+    public int setJmlMelon(int text) {
+        this.jmlmelon.setText(text + "");
+        return text;
+    }
+
+    public int setJmlPisang(int text) {
+        this.jmlpisang.setText(text + "");
+        return text;
+    }
+
+    public int setJmlApel(int text) {
+        this.jmlapel.setText(text + "");
+        return text;
+    }
+
+    public String getJmlApel() {
+        return jmlapel.getText();
+    }
+
+    public String getJmlSemangka() {
+        return jmlsemangka.getText();
+    }
+
+    public String getJmlPisang() {
+        return jmlpisang.getText();
+    }
+
+    public String getJmlMangga() {
+        return jmlmangga.getText();
+    }
+
+    public String getJmlMelon() {
+        return jmlmelon.getText();
+    }
+
     public void btnMelon(ActionListener a) {
         this.btnmelon.addActionListener(a);
     }
@@ -155,6 +200,11 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         btnmelon = new javax.swing.JButton();
         btnsemangka = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        jmlmangga = new javax.swing.JLabel();
+        jmlsemangka = new javax.swing.JLabel();
+        jmlapel = new javax.swing.JLabel();
+        jmlmelon = new javax.swing.JLabel();
+        jmlpisang = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         popup.setUndecorated(true);
@@ -278,6 +328,31 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         });
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 130, 100));
 
+        jmlmangga.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jmlmangga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jmlmangga.setText("0");
+        getContentPane().add(jmlmangga, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 250, 110, -1));
+
+        jmlsemangka.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jmlsemangka.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jmlsemangka.setText("0");
+        getContentPane().add(jmlsemangka, new org.netbeans.lib.awtextra.AbsoluteConstraints(1019, 330, 100, -1));
+
+        jmlapel.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jmlapel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jmlapel.setText("0");
+        getContentPane().add(jmlapel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 400, 90, -1));
+
+        jmlmelon.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jmlmelon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jmlmelon.setText("0");
+        getContentPane().add(jmlmelon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 480, 120, -1));
+
+        jmlpisang.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jmlpisang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jmlpisang.setText("0");
+        getContentPane().add(jmlpisang, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 550, 90, -1));
+
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/inpasarbuah1.png"))); // NOI18N
         jLabel1.setAutoscrolls(true);
@@ -350,6 +425,11 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jml;
+    private javax.swing.JLabel jmlapel;
+    private javax.swing.JLabel jmlmangga;
+    private javax.swing.JLabel jmlmelon;
+    private javax.swing.JLabel jmlpisang;
+    private javax.swing.JLabel jmlsemangka;
     private javax.swing.JLabel labelharga;
     private javax.swing.JLabel labelkualitas;
     public javax.swing.JButton leftbutton;

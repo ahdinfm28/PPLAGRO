@@ -5,9 +5,8 @@
  */
 package pplagro;
 
-
 import v.mainmenu;
- import c.cmenu;
+import c.cmenu;
 
 /**
  *
@@ -16,11 +15,10 @@ import v.mainmenu;
 public class PPLAGRO {
 
     mainmenu awal;
-
-
+  
     public static void main(String[] args) throws InterruptedException {
         mainmenu v = new mainmenu();
         cmenu c = new cmenu(v);
-       // v.loading();
+        // v.loading();
     }
 }

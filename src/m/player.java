@@ -27,14 +27,13 @@ public class player extends func {
         return checkId(query);
     }
 
-    public String cekId(String username) throws SQLException { //cek siapa yang punya id tersebut
-        String query = "SELECT `IdPlayer` FROM `player` WHERE `Username` = '" + username + "'";
-        ResultSet hasil = this.getResult(query);
-        hasil.next();
-        String data = hasil.getString(1).toUpperCase();
-        return data;
-    }
-
+//    public String cekId(String username) throws SQLException { //cek siapa yang punya id tersebut
+//        String query = "SELECT `idPlayer` FROM `player` WHERE `username` = '" + username + "'";
+//        ResultSet hasil = this.getResult(query);
+//        hasil.next();
+//        String data = hasil.getString(1).toUpperCase();
+//        return data;
+//    }
     public boolean insertPlayer(int idPlayer, String username, String password) {
         String query = "INSERT INTO `player` (`idPlayer`, `username`, `password`) VALUES ('" + idPlayer + "', '" + username
                 + "', '" + password + "')";
@@ -61,5 +60,18 @@ public class player extends func {
         hasil.next();
         String data = hasil.getString(1).toUpperCase();
         return data;
+    }
+
+    public boolean cekUsername(String username) throws SQLException {
+        String query = "SELECT `username` FROM `player` WHERE  username = '" + username + "'";
+        boolean status = false;
+        try {
+            rs = con.getResult(query);
+            if (rs.next()) {
+                status = true;
+            }
+        } catch (SQLException e) {
+        }
+        return status;
     }
 }

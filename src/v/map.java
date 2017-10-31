@@ -30,6 +30,14 @@ public class map extends javax.swing.JFrame {
         this.setSize(x, y);
     }
 
+    public void klikLanjut(ActionListener a) {
+        lanjut.addActionListener(a);
+    }
+
+    public void klikPermainanBaru(ActionListener a) {
+        newgame.addActionListener(a);
+    }
+
     public void klikPasar(MouseListener a) {
         pasar.addMouseListener(a);
     }
@@ -54,6 +62,22 @@ public class map extends javax.swing.JFrame {
         this.user.setText(t);
     }
 
+    public void invisibleTombol() {
+        lanjut.setVisible(false);
+        newgame.setVisible(false);
+    }
+
+    public void disabledRumah() {
+        gudang.setEnabled(false);
+        pasar.setEnabled(false);
+        pabrik.setEnabled(false);
+    }
+    public void enabledRumah() {
+        gudang.setEnabled(true);
+        pasar.setEnabled(true);
+        pabrik.setEnabled(true);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -64,6 +88,8 @@ public class map extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         labeluang = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
+        lanjut = new javax.swing.JButton();
+        newgame = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,6 +130,25 @@ public class map extends javax.swing.JFrame {
         user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 140, 40));
 
+        lanjut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttoncontinue.png"))); // NOI18N
+        lanjut.setBorder(null);
+        lanjut.setBorderPainted(false);
+        lanjut.setContentAreaFilled(false);
+        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lanjutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, -1, -1));
+
+        newgame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttonnewgame.png"))); // NOI18N
+        newgame.setBorder(null);
+        newgame.setBorderPainted(false);
+        newgame.setContentAreaFilled(false);
+        newgame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/map.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1412, 770));
 
@@ -117,8 +162,12 @@ public class map extends javax.swing.JFrame {
 
     private void backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseExited
         ImageIcon awal = new ImageIcon(getClass().getResource("/ui export/back.png"));
-        back.setIcon(awal); 
+        back.setIcon(awal);
     }//GEN-LAST:event_backMouseExited
+
+    private void lanjutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanjutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lanjutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +209,8 @@ public class map extends javax.swing.JFrame {
     public javax.swing.JLabel gudang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labeluang;
+    private javax.swing.JButton lanjut;
+    private javax.swing.JButton newgame;
     public javax.swing.JLabel pabrik;
     public javax.swing.JLabel pasar;
     private javax.swing.JLabel user;

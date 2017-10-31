@@ -173,8 +173,6 @@ public class cmenu {
         }
     }
 
-  
-
     //--------------------pbutton-------------------  
     private class acttombolmain implements MouseListener {
 

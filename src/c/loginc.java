@@ -50,7 +50,7 @@ public class loginc {
                 vlogin.dispose();
                 mainmenu v = new mainmenu();
                 cmenu c = new cmenu(v);
-                
+
 //  vlogin.dispose();
 //vmain.enable();
 //  mainmenu v = new mainmenu();
@@ -71,7 +71,8 @@ public class loginc {
                 } else if (vlogin.getPassword().isEmpty()) {
                     vlogin.tampilPesan("Password gabole kosong");
                 } else if (mplayer.getPlayer(vlogin.getUsername(), vlogin.getPassword())) {
-                    new mapc(uname);
+                    map v = new map();
+                    new mapc(uname, v);
                     System.out.println(uname);
                     vlogin.dispose();
                 } else {
@@ -102,14 +103,24 @@ public class loginc {
         public void actionPerformed(ActionEvent e) {
             try {
                 int idPlayer = mplayer.cekIdP();
-                if (mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate(), vlogin.getPasswordCreate())) {
+                String uname = vlogin.getUsernameCreate();
+                String pass = vlogin.getPasswordCreate();
+                System.out.println(uname);
+                if (uname.equals("")) {  
+                    vlogin.tampilPesanCreate("username harus diisi");
+                } else if (pass.equals("")) {
+                    vlogin.tampilPesanCreate("password harus diisi");
+                } else if (vlogin.getUsernameCreate().equals(mplayer.cekUsername(uname))) {
+                    vlogin.tampilPesanCreate("Username telah digunakan!");
+                } else {
+                    mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate(), vlogin.getPasswordCreate());
                     maset.insertAset(maset.cekIdAset(), idPlayer);
                     vlogin.tampilPesanCreate("Akun berhasil dibuat");
                     vlogin.setUsernameCreate("");
                     vlogin.setPasswordCreate("");
-
-                } else {
-                    vlogin.tampilPesan("Akun GAGAL dibuat");
+                    vlogin.createAccount().setVisible(false);
+                    vlogin.enable();
+                    System.out.println("isine" + mplayer.cekUsername(vlogin.getUsernameCreate()));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(loginc.class.getName()).log(Level.SEVERE, null, ex);

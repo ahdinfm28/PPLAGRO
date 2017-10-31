@@ -103,7 +103,7 @@ public class insupermarket extends javax.swing.JFrame {
     }
 
     public int setjmltepungt(int text) {
-        this.jmltepung.setText(text + "");
+        this.jmltepung2.setText(text + "");
         return text;
     }
 
@@ -398,6 +398,7 @@ public class insupermarket extends javax.swing.JFrame {
         back.setBorder(null);
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 backMouseEntered(evt);
@@ -406,7 +407,7 @@ public class insupermarket extends javax.swing.JFrame {
                 backMouseExited(evt);
             }
         });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 140, 100));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 140, 100));
 
         btntepung2.setBorder(null);
         btntepung2.setBorderPainted(false);

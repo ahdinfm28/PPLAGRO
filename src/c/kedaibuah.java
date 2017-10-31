@@ -42,6 +42,7 @@ public class kedaibuah {
     boolean statusApel = false;
     boolean statusPisang = false;
     boolean statusSemangka = false;
+    int mangga, melon, pisang, semangka, apel;
     int uang, jml = 1, kualitas = 1;
     AudioInputStream audio;
     Clip clip;
@@ -54,6 +55,12 @@ public class kedaibuah {
         maset = new aset();
         mbelibuah = new pembelian();
         uang = vkedai1.setUang(maset.getUang(username));
+        mangga = vkedai1.setJmlMangga(maset.getJmlMangga(username));
+        melon = vkedai1.setJmlMelon(maset.getJmlMelon(username));
+        apel = vkedai1.setJmlApel(maset.getJmlApel(username));
+        pisang = vkedai1.setJmlPisang(maset.getJmlPisang(username));
+        semangka = vkedai1.setJmlSemangka(maset.getJmlSemangka(username));
+
         vkedai1.setVisible(true);
         vkedai1.klikKembali(new acttombolkembali());
         vkedai1.btnApel(new acttombolApel());
@@ -67,6 +74,7 @@ public class kedaibuah {
         vkedai1.tombolTambah(new acttombolTambah());
         vkedai1.tombolBeli(new acttombolBeli());
         vkedai1.tombolBatal(new acttombolBatal());
+
     }
 
     public kedaibuah(String username, inkedaibuah2 v) throws SQLException {
@@ -75,8 +83,16 @@ public class kedaibuah {
         mplayer = new player();
         maset = new aset();
         mbelibuah = new pembelian();
-        uang = v.setUang(maset.getUang(username));
         this.vkedai2 = v;
+        
+        uang = v.setUang(maset.getUang(username));
+        mangga = v.setJmlMangga(maset.getJmlMangga(username));
+        System.out.println(mangga);
+        melon = v.setJmlMelon(maset.getJmlMelon(username));
+        apel = v.setJmlApel(maset.getJmlApel(username));
+        pisang = v.setJmlPisang(maset.getJmlPisang(username));
+        semangka = v.setJmlSemangka(maset.getJmlSemangka(username));
+
         v.setVisible(true);
         v.klikKembali(new acttombolkembali());
         v.btnApel(new acttombolApel());
@@ -116,6 +132,7 @@ public class kedaibuah {
             if (kedai1) {
                 try {
                     String id = "151";
+                    vkedai1.setTeksJumlah("1");
                     vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(id)));
                     vkedai1.setTeksKualitas("Baik");
                     vkedai1.popup().setVisible(true);
@@ -131,6 +148,7 @@ public class kedaibuah {
                 try {
                     System.out.println("melon kedai 2");
                     String id2 = "251";
+                    vkedai2.setTeksJumlah("1");
                     vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(id2)));
                     vkedai2.setTeksKualitas("Baik");
                     vkedai2.popup().setVisible(true);
@@ -155,6 +173,7 @@ public class kedaibuah {
             if (kedai1) {
                 try {
                     String id = "1P1";
+                    vkedai1.setTeksJumlah("1");
                     vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(id)));
                     vkedai1.setTeksKualitas("Baik");
                     vkedai1.popup().setVisible(true);
@@ -170,6 +189,7 @@ public class kedaibuah {
                 try {
                     System.out.println("pisang kedai 2");
                     String id2 = "2P1";
+                    vkedai2.setTeksJumlah("1");
                     vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(id2)));
                     vkedai2.setTeksKualitas("Baik");
                     vkedai2.popup().setVisible(true);
@@ -194,6 +214,7 @@ public class kedaibuah {
                 try {
                     System.out.println("Apel kedai 1");
                     String id = "1A1";
+                    vkedai1.setTeksJumlah("1");
                     vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(id)));
                     vkedai1.setTeksKualitas("Baik");
                     vkedai1.popup().setVisible(true);
@@ -209,6 +230,7 @@ public class kedaibuah {
                 try {
                     System.out.println("Apel kedai 2");
                     String id2 = "2A1";
+                    vkedai2.setTeksJumlah("1");
                     vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(id2)));
                     vkedai2.setTeksKualitas("Baik");
                     vkedai2.popup().setVisible(true);
@@ -232,6 +254,7 @@ public class kedaibuah {
             if (kedai1) {
                 try {
                     String id = "131";
+                    vkedai1.setTeksJumlah("1");
                     vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(id)));
                     vkedai1.setTeksKualitas("Baik");
                     vkedai1.popup().setVisible(true);
@@ -245,8 +268,9 @@ public class kedaibuah {
                 }
             } else if (kedai2) {
                 try {
-                    System.out.println("Mangga kedai 2");
+                    System.out.println("Mangga  kedai 2");
                     String id2 = "231";
+                    vkedai2.setTeksJumlah("1");
                     vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(id2)));
                     vkedai2.setTeksKualitas("Baik");
                     vkedai2.popup().setVisible(true);
@@ -271,6 +295,7 @@ public class kedaibuah {
                 try {
                     System.out.println("semangka kedai 1");
                     String id = "1S1";
+                    vkedai1.setTeksJumlah("1");
                     vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(id)));
                     vkedai1.setTeksKualitas("Baik");
                     vkedai1.popup().setVisible(true);
@@ -286,6 +311,7 @@ public class kedaibuah {
                 try {
                     System.out.println("semangka kedai 2");
                     String id2 = "2S1";
+                    vkedai2.setTeksJumlah("1");
                     vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(id2)));
                     vkedai2.setTeksKualitas("Baik");
                     vkedai2.popup().setVisible(true);
@@ -307,17 +333,19 @@ public class kedaibuah {
         if (kedai1) {
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai1.getJmlSemangka());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai1.setJmlSemangka(totjml);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -328,17 +356,19 @@ public class kedaibuah {
         } else if (kedai2) {
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai2.getJmlSemangka());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai2.setJmlSemangka(totjml);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -354,17 +384,19 @@ public class kedaibuah {
         if (kedai1) {
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai1.getJmlMelon());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai1.setJmlMelon(totjml);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -375,17 +407,19 @@ public class kedaibuah {
         } else if (kedai2) {
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai2.getJmlMelon());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai2.setJmlMelon(totjml);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -401,17 +435,19 @@ public class kedaibuah {
         if (kedai1) {
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai1.getJmlMangga());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai1.setJmlMangga(totjml);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -422,17 +458,19 @@ public class kedaibuah {
         } else if (kedai2) {
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai2.getJmlMangga());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai2.setJmlMangga(totjml);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -448,17 +486,19 @@ public class kedaibuah {
         if (kedai1) {
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai1.getJmlApel());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai1.setJmlApel(totjml);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -469,17 +509,19 @@ public class kedaibuah {
         } else if (kedai2) {
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai2.getJmlApel());
+            int totjml = stok + jml;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai2.setJmlApel(totjml);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -495,17 +537,19 @@ public class kedaibuah {
         if (kedai1) {
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai1.getJmlPisang());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai1.setJmlPisang(totjml);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -516,17 +560,19 @@ public class kedaibuah {
         } else if (kedai2) {
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
+            int stok = Integer.valueOf(vkedai2.getJmlPisang());
+            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
-                    maset.updateUang(uang, mplayer.cekId(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.cekId(username), id,
+                    maset.updateUang(uang, mplayer.getIdPlayer(username));
+                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
                             mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    //     vkedai1.setjmltepungb(tot);
+                    vkedai2.setJmlPisang(totjml);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -591,10 +637,11 @@ public class kedaibuah {
                 }
                 if (statusSemangka) {
                     try {
-                        String ids = "1S2";
                         if (kedai1) {
+                            String ids = "1S2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         } else if (kedai2) {
+                            String ids = "2S2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         }
                     } catch (SQLException ex) {
@@ -602,10 +649,11 @@ public class kedaibuah {
                     }
                 } else if (statusMelon) {
                     try {
-                        String idme = "152";
                         if (kedai1) {
+                            String idme = "152";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         } else if (kedai2) {
+                            String idme = "252";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         }
                     } catch (SQLException ex) {
@@ -613,10 +661,11 @@ public class kedaibuah {
                     }
                 } else if (statusMangga) {
                     try {
-                        String idma = "132";
                         if (kedai1) {
+                            String idma = "132";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         } else if (kedai2) {
+                            String idma = "232";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         }
                     } catch (SQLException ex) {
@@ -624,10 +673,11 @@ public class kedaibuah {
                     }
                 } else if (statusApel) {
                     try {
-                        String ida = "1A2";
                         if (kedai1) {
+                            String ida = "1A2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         } else if (kedai2) {
+                            String ida = "2A2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         }
                     } catch (SQLException ex) {
@@ -635,10 +685,11 @@ public class kedaibuah {
                     }
                 } else if (statusPisang) {
                     try {
-                        String idp = "1P2";
                         if (kedai1) {
+                            String idp = "1P2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         } else if (kedai2) {
+                            String idp = "2P2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         }
                     } catch (SQLException ex) {
@@ -655,10 +706,11 @@ public class kedaibuah {
                 }
                 if (statusSemangka) {
                     try {
-                        String ids = "1S3";
                         if (kedai1) {
+                            String ids = "1S3";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         } else if (kedai2) {
+                            String ids = "2S3";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         }
                     } catch (SQLException ex) {
@@ -666,10 +718,11 @@ public class kedaibuah {
                     }
                 } else if (statusMelon) {
                     try {
-                        String idme = "153";
                         if (kedai1) {
+                            String idme = "153";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         } else if (kedai2) {
+                            String idme = "253";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         }
                     } catch (SQLException ex) {
@@ -677,10 +730,11 @@ public class kedaibuah {
                     }
                 } else if (statusMangga) {
                     try {
-                        String idma = "133";
                         if (kedai1) {
+                            String idma = "133";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         } else if (kedai2) {
+                            String idma = "233";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         }
                     } catch (SQLException ex) {
@@ -688,25 +742,25 @@ public class kedaibuah {
                     }
                 } else if (statusApel) {
                     try {
-                        String ida = "1A3";
                         if (kedai1) {
+                            String ida = "1A3";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         } else if (kedai2) {
+                            String ida = "2A3";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         }
-                        System.out.println(mbelibuah.getHarga(ida));
                     } catch (SQLException ex) {
                         Logger.getLogger(kedaibuah.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else if (statusPisang) {
                     try {
-                        String idp = "1P3";
                         if (kedai1) {
+                            String idp = "1P3";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         } else if (kedai2) {
+                            String idp = "2P3";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         }
-                        System.out.println(mbelibuah.getHarga(idp));
                     } catch (SQLException ex) {
                         Logger.getLogger(kedaibuah.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -736,10 +790,11 @@ public class kedaibuah {
                 }
                 if (statusSemangka) {
                     try {
-                        String ids = "1S1";
                         if (kedai1) {
+                            String ids = "1S1";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         } else if (kedai2) {
+                            String ids = "2S1";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         }
                     } catch (SQLException ex) {
@@ -747,10 +802,11 @@ public class kedaibuah {
                     }
                 } else if (statusMelon) {
                     try {
-                        String idme = "151";
                         if (kedai1) {
+                            String idme = "151";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         } else if (kedai2) {
+                            String idme = "251";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         }
                     } catch (SQLException ex) {
@@ -758,10 +814,11 @@ public class kedaibuah {
                     }
                 } else if (statusMangga) {
                     try {
-                        String idma = "131";
                         if (kedai1) {
+                            String idma = "131";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         } else if (kedai2) {
+                            String idma = "231";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         }
                     } catch (SQLException ex) {
@@ -769,10 +826,11 @@ public class kedaibuah {
                     }
                 } else if (statusApel) {
                     try {
-                        String ida = "1A1";
                         if (kedai1) {
+                            String ida = "1A1";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         } else if (kedai2) {
+                            String ida = "2A1";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         }
                     } catch (SQLException ex) {
@@ -780,10 +838,11 @@ public class kedaibuah {
                     }
                 } else if (statusPisang) {
                     try {
-                        String idp = "1P1";
                         if (kedai1) {
+                            String idp = "1P1";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         } else if (kedai2) {
+                            String idp = "2P1";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         }
                     } catch (SQLException ex) {
@@ -798,10 +857,11 @@ public class kedaibuah {
                 }
                 if (statusSemangka) {
                     try {
-                        String ids = "1S2";
                         if (kedai1) {
+                            String ids = "1S2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         } else if (kedai2) {
+                            String ids = "2S2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ids)));
                         }
                     } catch (SQLException ex) {
@@ -809,10 +869,11 @@ public class kedaibuah {
                     }
                 } else if (statusMelon) {
                     try {
-                        String idme = "152";
                         if (kedai1) {
+                            String idme = "152";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         } else if (kedai2) {
+                            String idme = "252";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idme)));
                         }
                     } catch (SQLException ex) {
@@ -820,10 +881,11 @@ public class kedaibuah {
                     }
                 } else if (statusMangga) {
                     try {
-                        String idma = "132";
                         if (kedai1) {
+                            String idma = "132";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         } else if (kedai2) {
+                            String idma = "232";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idma)));
                         }
                     } catch (SQLException ex) {
@@ -831,25 +893,25 @@ public class kedaibuah {
                     }
                 } else if (statusApel) {
                     try {
-                        String ida = "1A2";
                         if (kedai1) {
+                            String ida = "1A2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         } else if (kedai2) {
+                            String ida = "2A2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(ida)));
                         }
-                        System.out.println(mbelibuah.getHarga(ida));
                     } catch (SQLException ex) {
                         Logger.getLogger(kedaibuah.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else if (statusPisang) {
                     try {
-                        String idp = "1P2";
                         if (kedai1) {
+                            String idp = "1P2";
                             vkedai1.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         } else if (kedai2) {
+                            String idp = "2P2";
                             vkedai2.setTeksHarga(String.valueOf(mbelibuah.getHarga(idp)));
                         }
-                        System.out.println(mbelibuah.getHarga(idp));
                     } catch (SQLException ex) {
                         Logger.getLogger(kedaibuah.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -908,7 +970,7 @@ public class kedaibuah {
                 vkedai1.setTeksJumlah(jml + "");
                 vkedai1.popup().dispose();
             } else if (kedai2) {
-                vkedai2.setVisible(true); 
+                vkedai2.setVisible(true);
                 vkedai2.enable();
                 vkedai2.setTeksJumlah(jml + "");
                 vkedai2.popup().dispose();

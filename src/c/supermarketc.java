@@ -109,6 +109,7 @@ public class supermarketc {
             supermarket.popup().setVisible(true);
             supermarket.enable();
             supermarket.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/tepung.png")));
+            supermarket.setTeksJumlah("1");
             supermarket.min.setVisible(false);
         }
 
@@ -122,6 +123,7 @@ public class supermarketc {
             supermarket.popup().setVisible(true);
             supermarket.enable();
             supermarket.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/tepung2.png")));
+            supermarket.setTeksJumlah("1");
             supermarket.min.setVisible(false);
         }
 
@@ -248,8 +250,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltepungb(totjml);
@@ -272,8 +274,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlpengembang(totjml);
@@ -296,8 +298,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltelur(totjml);
@@ -320,8 +322,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlmentega(totjml);
                 supermarket.setUang(maset.getUang(username));
@@ -344,8 +346,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlsirup(totjml);
                 supermarket.setUang(maset.getUang(username));
@@ -368,8 +370,8 @@ public class supermarketc {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlsusu(totjml);
                 supermarket.setUang(maset.getUang(username));
@@ -392,8 +394,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlgula(totjml);
@@ -416,8 +418,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlmayo(totjml);
@@ -440,8 +442,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlminyak(totjml);
@@ -464,8 +466,8 @@ public class supermarketc {
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
                 uang = uang - tot;
-                maset.updateUang(uang, mplayer.cekId(username));
-                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.cekId(username), id, jml);
+                maset.updateUang(uang, mplayer.getIdPlayer(username));
+                mbelibahan.insertBahan(mbelibahan.cekIdBeliBahan(), mplayer.getIdPlayer(username), id, jml);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltepungt(totjml);
@@ -585,7 +587,7 @@ public class supermarketc {
             statusPengembang = false;
             jml = 1;
             //   popupbeli.setTeksJumlah(jml + "");
-           supermarket.popup().dispose();
+            supermarket.popup().dispose();
         }
 
     }
