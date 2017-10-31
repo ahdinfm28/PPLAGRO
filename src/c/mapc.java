@@ -176,7 +176,8 @@ public class mapc {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-
+            new pengolahanc(username);
+            vmap.dispose();
         }
 
         @Override
