@@ -257,7 +257,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(tepungberas, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltepungb(tepungberas);
@@ -283,7 +282,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(pengembang, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlpengembang(pengembang);
@@ -309,7 +307,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(telur, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltelur(telur);
@@ -335,7 +332,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(mentega, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlmentega(mentega);
                 supermarket.setUang(maset.getUang(username));
@@ -361,7 +357,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(sirup, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlsirup(sirup);
                 supermarket.setUang(maset.getUang(username));
@@ -387,7 +382,6 @@ public class supermarketc {
                 susu=susu+jml;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(susu, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setjmlsusu(susu);
                 supermarket.setUang(maset.getUang(username));
@@ -413,7 +407,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(gula, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlgula(gula);
@@ -439,7 +432,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(mayo, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlmayo(mayo);
@@ -465,7 +457,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(minyak, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmlminyak(minyak);
@@ -491,7 +482,6 @@ public class supermarketc {
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(tepungterigu, id, mplayer.getIdPlayer(username));
-                molah.insertOlahBahan(molah.cekIdOlahBahan(), idbeli, 0);
                 supermarket.tampilPesan("Transaksi Berhasil");
                 supermarket.setUang(maset.getUang(username));
                 supermarket.setjmltepungt(tepungterigu);
