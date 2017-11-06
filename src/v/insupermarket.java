@@ -56,11 +56,11 @@ public class insupermarket extends javax.swing.JFrame {
     }
 
     public void btntepungTerigu(ActionListener a) {
-        this.btntepung.addActionListener(a);
+        this.btntepung2.addActionListener(a);
     }
 
     public void btntepungBeras(ActionListener a) {
-        this.btntepung2.addActionListener(a);
+        this.btntepung.addActionListener(a);
     }
 
     public void btnpengembang(ActionListener a) {

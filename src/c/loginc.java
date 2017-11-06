@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import m.aset;
+import m.pembelian;
+import m.pengolahan;
 import m.player;
 import v.login;
 import v.mainmenu;
@@ -28,12 +30,16 @@ public class loginc {
     login vlogin;
     mainmenu vmain;
     cmenu menu;
+    pembelian mbeli;
+    pengolahan molah;
 
     public loginc() throws SQLException {
 
         this.vlogin = new login();
         this.mplayer = new player();
         this.maset = new aset();
+        this.mbeli = new pembelian();
+        this.molah = new pengolahan();
         vlogin.setVisible(true);
         vlogin.klikLogin(new acttombolLogin());
         vlogin.klikKembali(new acttombolKembali());
@@ -106,7 +112,7 @@ public class loginc {
                 String uname = vlogin.getUsernameCreate();
                 String pass = vlogin.getPasswordCreate();
                 System.out.println(uname);
-                if (uname.equals("")) {  
+                if (uname.equals("")) {
                     vlogin.tampilPesanCreate("username harus diisi");
                 } else if (pass.equals("")) {
                     vlogin.tampilPesanCreate("password harus diisi");
@@ -115,6 +121,9 @@ public class loginc {
                 } else {
                     mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate(), vlogin.getPasswordCreate());
                     maset.insertAset(maset.cekIdAset(), idPlayer);
+                    mbeli.insertBeliBuah(String.valueOf(idPlayer));
+                    mbeli.insertBeliBahan(String.valueOf(idPlayer));
+                    molah.insertHasilOlah(String.valueOf(idPlayer));
                     vlogin.tampilPesanCreate("Akun berhasil dibuat");
                     vlogin.setUsernameCreate("");
                     vlogin.setPasswordCreate("");

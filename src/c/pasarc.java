@@ -45,6 +45,7 @@ public class pasarc {
             try {
                 map v = new map();
                 mapc c = new mapc(username);
+                vpasar.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(pasarc.class.getName()).log(Level.SEVERE, null, ex);
             }

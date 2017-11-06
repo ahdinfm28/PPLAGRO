@@ -27,13 +27,6 @@ public class player extends func {
         return checkId(query);
     }
 
-//    public String cekId(String username) throws SQLException { //cek siapa yang punya id tersebut
-//        String query = "SELECT `idPlayer` FROM `player` WHERE `username` = '" + username + "'";
-//        ResultSet hasil = this.getResult(query);
-//        hasil.next();
-//        String data = hasil.getString(1).toUpperCase();
-//        return data;
-//    }
     public boolean insertPlayer(int idPlayer, String username, String password) {
         String query = "INSERT INTO `player` (`idPlayer`, `username`, `password`) VALUES ('" + idPlayer + "', '" + username
                 + "', '" + password + "')";

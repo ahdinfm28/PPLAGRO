@@ -14,6 +14,7 @@ import java.sql.SQLException;
 public class pembelian extends func {
 
     public pembelian() throws SQLException {
+
     }
 
     public int cekIdBeliBahan() throws SQLException {
@@ -45,13 +46,82 @@ public class pembelian extends func {
         return getStatusQuery(query);
     }
 
+    public boolean insertBeliBuah(String idPlayer) {
+        String query = "INSERT INTO `pembelianbuah`(`idBeliBuah`, `idPlayer`, "
+                + "`idBuah`, `idKualitas`, `JumlahBeli`) "
+                + "VALUES "
+                + "(null,'" + idPlayer + "','1','1','0'),"
+                + "(null,'" + idPlayer + "','1','2','0'),"
+                + "(null,'" + idPlayer + "','1','3','0'),"
+                + "(null,'" + idPlayer + "','2','1','0'),"
+                + "(null,'" + idPlayer + "','2','2','0'),"
+                + "(null,'" + idPlayer + "','2','3','0'),"
+                + "(null,'" + idPlayer + "','3','1','0'),"
+                + "(null,'" + idPlayer + "','3','2','0'),"
+                + "(null,'" + idPlayer + "','3','3','0'),"
+                + "(null,'" + idPlayer + "','4','1','0'),"
+                + "(null,'" + idPlayer + "','4','2','0'),"
+                + "(null,'" + idPlayer + "','4','3','0'),"
+                + "(null,'" + idPlayer + "','5','1','0'),"
+                + "(null,'" + idPlayer + "','5','2','0'),"
+                + "(null,'" + idPlayer + "','5','3','0')";
+        System.out.println(query);
+        return getStatusQuery(query);
+    }
+
+    public boolean insertBeliBahan(String idPlayer) {
+        String query = "INSERT INTO `pembelianbahan`(`idBeliB`, `idPlayer`, "
+                + "`idBahan`, `JumlahBeli`) "
+                + "VALUES "
+                + "(null,'" + idPlayer + "','1','0'),"
+                + "(null,'" + idPlayer + "','2','0'),"
+                + "(null,'" + idPlayer + "','3','0'),"
+                + "(null,'" + idPlayer + "','4','0'),"
+                + "(null,'" + idPlayer + "','5','0'),"
+                + "(null,'" + idPlayer + "','6','0'),"
+                + "(null,'" + idPlayer + "','7','0'),"
+                + "(null,'" + idPlayer + "','8','0'),"
+                + "(null,'" + idPlayer + "','9','0'),"
+                + "(null,'" + idPlayer + "','10','0')";
+        System.out.println(query);
+        return getStatusQuery(query);
+    }
+
+    public boolean tambahPembelianBuah(int jml, int idBuah, int idKualitas, String idPlayer) throws SQLException {
+        String query = "UPDATE `pembelianbuah` SET `JumlahBeli` = '" + jml + "' WHERE `idBuah` = '" + idBuah + "'"
+                + "and idKualitas='" + idKualitas + "' and idPlayer='" + idPlayer + "'";
+        System.out.println(query);
+        return getStatusQuery(query);
+    }
+
+    public boolean tambahPembelianBahan(int jml, int idBahan, String idPlayer) throws SQLException {
+        String query = "UPDATE `pembelianbahan` SET `JumlahBeli` = '" + jml + "' WHERE `idBahan` = '" + idBahan + "'"
+                + "and idPlayer = '" + idPlayer + "'";
+        System.out.println(query);
+        return getStatusQuery(query);
+    }
+
+    public boolean resetPembelianBahan(String idPlayer) throws SQLException {
+        String query = "UPDATE `pembelianbahan` SET `JumlahBeli` = '0' WHERE idPlayer = '" + idPlayer + "'";
+        return getStatusQuery(query);
+    }
+
+    public boolean resetPembelianBuah(String idPlayer) throws SQLException {
+        String query = "UPDATE `pembelianbuah` SET `JumlahBeli` = '0' WHERE idPlayer = '" + idPlayer + "'";
+        return getStatusQuery(query);
+    }
+    public boolean resetHasilPengolahan(String idPlayer) throws SQLException {
+        String query = "UPDATE `hasilpengolahan` SET `Jumlah` = '0' WHERE idPlayer = '" + idPlayer + "'";
+        return getStatusQuery(query);
+    }
+
     public boolean deleteHarga() {
         String query = "DELETE FROM `harga`";
         return getStatusQuery(query);
     }
 
     public int getHarga(String idHarga) throws SQLException {
-        String query = "select Harga from harga where idHarga = '"+idHarga+"'";
+        String query = "select Harga from harga where idHarga = '" + idHarga + "'";
         return getDataInt(query);
     }
 

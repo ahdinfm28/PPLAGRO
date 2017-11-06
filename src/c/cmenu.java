@@ -38,6 +38,7 @@ public class cmenu {
     AudioInputStream audio;
     Clip clip;
     login log;
+    boolean petunjuk = false, tentang = false;
 
     public cmenu(mainmenu v) throws InterruptedException {
         this.vmain = v;
@@ -51,12 +52,14 @@ public class cmenu {
     }
 
     public cmenu(petunjuk v) {
+        petunjuk = true;
         this.vpetunjuk = v;
         v.setVisible(true);
         v.tombolkembali(new acttombolkembali());
     }
 
     public cmenu(tentang v) {
+        tentang = true;
         this.vtentang = v;
         v.setVisible(true);
         v.tombolkembali(new acttombolkembali());
@@ -218,7 +221,13 @@ public class cmenu {
             try {
                 mainmenu v = new mainmenu();
                 cmenu c = new cmenu(v);
-
+                if (petunjuk) {
+                    petunjuk = false;
+                    vpetunjuk.dispose();
+                } else if (tentang) {
+                    tentang = false;
+                    vtentang.dispose();
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -18,6 +18,7 @@ import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 import m.aset;
 import m.pembelian;
+import m.pengolahan;
 import m.player;
 import v.inkedaibuah1;
 import v.inkedaibuah2;
@@ -37,13 +38,14 @@ public class kedaibuah {
     pembelian mbelibuah;
     inkedaibuah1 vkedai1;
     inkedaibuah2 vkedai2;
+    pengolahan molah;
     boolean statusMelon = false;
     boolean statusMangga = false;
     boolean statusApel = false;
     boolean statusPisang = false;
     boolean statusSemangka = false;
     int mangga, melon, pisang, semangka, apel;
-    int uang, jml = 1, kualitas = 1;
+    int uang, jml, kualitas = 1;
     AudioInputStream audio;
     Clip clip;
 
@@ -52,15 +54,16 @@ public class kedaibuah {
         this.username = username;
         vkedai1 = new inkedaibuah1();
         mplayer = new player();
+        molah = new pengolahan();
         maset = new aset();
         mbelibuah = new pembelian();
         uang = vkedai1.setUang(maset.getUang(username));
-        mangga = vkedai1.setJmlMangga(maset.getJmlMangga(username));
-        melon = vkedai1.setJmlMelon(maset.getJmlMelon(username));
-        apel = vkedai1.setJmlApel(maset.getJmlApel(username));
-        pisang = vkedai1.setJmlPisang(maset.getJmlPisang(username));
-        semangka = vkedai1.setJmlSemangka(maset.getJmlSemangka(username));
-
+        mangga = vkedai1.setJmlMangga(maset.getJmlBuahAll(username, 3));
+        melon = vkedai1.setJmlMelon(maset.getJmlBuahAll(username, 5));
+        apel = vkedai1.setJmlApel(maset.getJmlBuahAll(username, 1));
+        pisang = vkedai1.setJmlPisang(maset.getJmlBuahAll(username, 2));
+        semangka = vkedai1.setJmlSemangka(maset.getJmlBuahAll(username, 4));
+        jml = vkedai1.getTeksJumlah();
         vkedai1.setVisible(true);
         vkedai1.klikKembali(new acttombolkembali());
         vkedai1.btnApel(new acttombolApel());
@@ -84,14 +87,15 @@ public class kedaibuah {
         maset = new aset();
         mbelibuah = new pembelian();
         this.vkedai2 = v;
-        
+        molah = new pengolahan();
+
         uang = v.setUang(maset.getUang(username));
-        mangga = v.setJmlMangga(maset.getJmlMangga(username));
-        System.out.println(mangga);
-        melon = v.setJmlMelon(maset.getJmlMelon(username));
-        apel = v.setJmlApel(maset.getJmlApel(username));
-        pisang = v.setJmlPisang(maset.getJmlPisang(username));
-        semangka = v.setJmlSemangka(maset.getJmlSemangka(username));
+        mangga = v.setJmlMangga(maset.getJmlBuahAll(username, 3));
+        melon = v.setJmlMelon(maset.getJmlBuahAll(username, 5));
+        apel = v.setJmlApel(maset.getJmlBuahAll(username, 1));
+        pisang = v.setJmlPisang(maset.getJmlBuahAll(username, 2));
+        semangka = v.setJmlSemangka(maset.getJmlBuahAll(username, 4));
+        jml = v.getTeksJumlah();
 
         v.setVisible(true);
         v.klikKembali(new acttombolkembali());
@@ -116,8 +120,13 @@ public class kedaibuah {
             try {
                 pasarmap v = new pasarmap();
                 pasarc c = new pasarc(username);
-                kedai2 = false;
-                kedai1 = false;
+                if (kedai1) {
+                    kedai1 = false;
+                    vkedai1.dispose();
+                } else if (kedai2) {
+                    kedai2 = false;
+                    vkedai2.dispose();
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(supermarketc.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -330,22 +339,30 @@ public class kedaibuah {
 
     private void semangkaAction() throws SQLException {
         int id = 4;
+        int idbeli = mbelibuah.cekIdBeliBuah();
         if (kedai1) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai1.getJmlSemangka());
-            int totjml = jml + stok;
+            //           int stok = Integer.valueOf(vkedai1.getJmlSemangka());
+            //           int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
+                    semangka = semangka + jml;
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    vkedai1.setJmlSemangka(totjml);
+                    vkedai1.setJmlSemangka(semangka);
+                    System.out.println("kedai1" + semangka);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -354,21 +371,27 @@ public class kedaibuah {
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai2.getJmlSemangka());
-            int totjml = jml + stok;
+//            int stok = Integer.valueOf(vkedai2.getJmlSemangka());
+//            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
+                    semangka = semangka + jml;
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    vkedai2.setJmlSemangka(totjml);
+                    vkedai2.setJmlSemangka(semangka);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -381,22 +404,29 @@ public class kedaibuah {
 
     private void melonAction() throws SQLException {
         int id = 5;
+        int idbeli = mbelibuah.cekIdBeliBuah();
         if (kedai1) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai1.getJmlMelon());
-            int totjml = jml + stok;
+            //          int stok = Integer.valueOf(vkedai1.getJmlMelon());
+            //          int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
+                    melon = melon + jml;
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    vkedai1.setJmlMelon(totjml);
+                    vkedai1.setJmlMelon(melon);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -405,21 +435,27 @@ public class kedaibuah {
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai2.getJmlMelon());
-            int totjml = jml + stok;
+            //        int stok = Integer.valueOf(vkedai2.getJmlMelon());
+            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
+                    melon = melon + jml;
                     uang = uang - (harga * jml);
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    vkedai2.setJmlMelon(totjml);
+                    vkedai2.setJmlMelon(melon);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -432,22 +468,29 @@ public class kedaibuah {
 
     private void manggaAction() throws SQLException {
         int id = 3;
+        int idbeli = mbelibuah.cekIdBeliBuah();
         if (kedai1) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai1.getJmlMangga());
-            int totjml = jml + stok;
+            //        int stok = Integer.valueOf(vkedai1.getJmlMangga());
+            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
+                    mangga = mangga + jml;
                     uang = uang - (harga * jml);
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    vkedai1.setJmlMangga(totjml);
+                    vkedai1.setJmlMangga(mangga);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -456,21 +499,27 @@ public class kedaibuah {
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai2.getJmlMangga());
-            int totjml = jml + stok;
+            //        int stok = Integer.valueOf(vkedai2.getJmlMangga());
+            //        int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
+                    mangga = mangga + jml;
                     uang = uang - (harga * jml);
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    vkedai2.setJmlMangga(totjml);
+                    vkedai2.setJmlMangga(mangga);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -483,22 +532,29 @@ public class kedaibuah {
 
     private void apelAction() throws SQLException {
         int id = 1;
+        int idbeli = mbelibuah.cekIdBeliBuah();
         if (kedai1) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai1.getJmlApel());
-            int totjml = jml + stok;
+            //        int stok = Integer.valueOf(vkedai1.getJmlApel());
+            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
+                    apel = apel + jml;
                     uang = uang - (harga * jml);
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    vkedai1.setJmlApel(totjml);
+                    vkedai1.setJmlApel(apel);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -507,21 +563,27 @@ public class kedaibuah {
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai2.getJmlApel());
-            int totjml = stok + jml;
+            //        int stok = Integer.valueOf(vkedai2.getJmlApel());
+            //        int totjml = stok + jml;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
+                    apel = apel + jml;
                     uang = uang - (harga * jml);
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    vkedai2.setJmlApel(totjml);
+                    vkedai2.setJmlApel(apel);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);
@@ -534,22 +596,29 @@ public class kedaibuah {
 
     private void pisangAction() throws SQLException {
         int id = 2;
+        int idbeli = mbelibuah.cekIdBeliBuah();
         if (kedai1) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai1.getJmlPisang());
-            int totjml = jml + stok;
+            //      int stok = Integer.valueOf(vkedai1.getJmlPisang());
+            //  int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
+                    pisang = pisang + jml;
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai1.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai1.tampilPesan("Transaksi Berhasil");
                     vkedai1.setUang(maset.getUang(username));
-                    vkedai1.setJmlPisang(totjml);
+                    vkedai1.setJmlPisang(pisang);
                     vkedai1.popup().setVisible(false);
                 } else {
                     vkedai1.popup().setVisible(true);
@@ -558,21 +627,27 @@ public class kedaibuah {
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
+            int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
+            int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
             int tot = jml * harga;
-            int stok = Integer.valueOf(vkedai2.getJmlPisang());
-            int totjml = jml + stok;
+            //       int stok = Integer.valueOf(vkedai2.getJmlPisang());
+            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
                     uang = uang - (harga * jml);
+                    pisang = pisang + jml;
                     maset.updateUang(uang, mplayer.getIdPlayer(username));
-                    mbelibuah.insertBuah(mbelibuah.cekIdBeliBuah(), mplayer.getIdPlayer(username), id,
-                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+//                    mbelibuah.insertBuah(idbeli, mplayer.getIdPlayer(username), id,
+//                            mbelibuah.getIdKualitas(vkedai2.getTeksKualitas()), harga, jml);
+                    mbelibuah.tambahPembelianBuah((jmlbuah + jml), id,
+                            idKualitas, mplayer.getIdPlayer(username));
+                    molah.insertOlahBuah(molah.cekIdOlahBuah(), idbeli, 0);
                     vkedai2.tampilPesan("Transaksi Berhasil");
                     vkedai2.setUang(maset.getUang(username));
-                    vkedai2.setJmlPisang(totjml);
+                    vkedai2.setJmlPisang(pisang);
                     vkedai2.popup().setVisible(false);
                 } else {
                     vkedai2.popup().setVisible(true);

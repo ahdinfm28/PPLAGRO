@@ -82,6 +82,7 @@ public class map extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         gudang = new javax.swing.JLabel();
@@ -99,13 +100,17 @@ public class map extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel4.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        jLabel4.setText("PASAR");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, -1, -1));
+
         jLabel3.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         jLabel3.setText("GUDANG");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         jLabel2.setText("PENGOLAHAN");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, -1, -1));
 
         gudang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(gudang, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 280, 440));
@@ -220,6 +225,7 @@ public class map extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel labeluang;
     private javax.swing.JButton lanjut;
     private javax.swing.JButton newgame;

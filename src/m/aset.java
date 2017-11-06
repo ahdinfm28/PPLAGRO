@@ -22,94 +22,44 @@ public class aset extends func {
         return getDataInt(query);
     }
 
-    public int getJmlGula(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 1 ";
+    public String getIdKualitas(String kualitas) throws SQLException {
+        String query = "SELECT `idKualitas` FROM `kualitas` WHERE `Kualitas` = '" + kualitas + "'";
+        ResultSet hasil = con.getResult(query);
+        hasil.next();
+        String data = hasil.getString(1).toUpperCase();
+        return data;
+    }
+
+    public int getJmlBuahAll(String username, int idBuah) throws SQLException {
+        String query = "SELECT sum(JumlahBeli) from pembelianbuah a join player b on a.idPlayer = b.idPlayer "
+                + "where a.idBuah='" + idBuah + "' and b.username='" + username + "'";
         System.out.println(query);
         return getDataInt(query);
     }
 
-    public int getJmlTepungB(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 2 ";
+    public int getJmlBuah(String username, int idBuah, int idKualitas) throws SQLException {
+        String query = "SELECT sum(JumlahBeli) from pembelianbuah a join player b on a.idPlayer = b.idPlayer "
+                + "where a.idBuah='" + idBuah + "' and b.username='" + username + "' and "
+                + "a.idKualitas='"+idKualitas+"'";
+        System.out.println(query);
         return getDataInt(query);
     }
 
-    public int getJmlPengembang(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 9 ";
+    public int getKualitasBuah(String username, int idBuah, int idKualitas) throws SQLException {
+        String query = "SELECT JumlahBeli FROM player p join pembelianbuah "
+                + "pb on p.idPlayer = pb.idPlayer "
+                + "where pb.idBuah='" + idBuah + "' and p.username='" + username + "' and pb.idKualitas='" + idKualitas + "'";
         return getDataInt(query);
     }
 
-    public int getJmlSusu(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 8";
+    public int getJmlBahan(String username, int idBahan) throws SQLException {
+        String query = "SELECT JumlahBeli from pembelianbahan a join player b on a.idPlayer = b.idPlayer "
+                + "where a.idBahan='" + idBahan + "' and b.username='" + username + "'";
         return getDataInt(query);
     }
-
-    public int getJmlTelur(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 7 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlMayonais(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 6 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlSirup(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 5 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlMinyak(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 3 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlTepungT(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 10 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlMentega(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianBahan bb join bahan b on b.idBahan = bb.idBahan JOIN "
-                + "player p on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBahan = 4";
-        return getDataInt(query);
-    }
-
-    public int getJmlMangga(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 3 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlMelon(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 5 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlApel(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 1 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlSemangka(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 4 ";
-        return getDataInt(query);
-    }
-
-    public int getJmlPisang(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli) from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 2 ";
+    public int getJmlProduk(String username, int idProduk, int idKualitas) throws SQLException {
+        String query = "SELECT Jumlah from hasilpengolahan a join player b on a.idPlayer = b.idPlayer "
+                + "where a.idProduk='" + idProduk + "' and a.idKualitas='" + idKualitas + "' and b.username='" + username + "'";
         return getDataInt(query);
     }
 
@@ -128,19 +78,15 @@ public class aset extends func {
         return getStatusQuery(query);
     }
 
+    public int updateMelon(String username) throws SQLException {
+        String query = "SELECT sum(bb.JumlahBeli)-1 from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
+                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 5 ";
+        return getDataInt(query);
+    }
+
     public boolean resetUang(String idPlayer) throws SQLException {
         String query = "UPDATE `aset` SET `Uang` = 500000 WHERE `aset`.`idPlayer` = '" + idPlayer + "';";
         System.out.println(query);
-        return getStatusQuery(query);
-    }
-
-    public boolean resetPembelianBahan(String idPlayer) {
-        String query = "DELETE FROM `pembelianbahan` WHERE `idPlayer` = " + idPlayer;
-        return getStatusQuery(query);
-    }
-
-    public boolean resetPembelianBuah(String idPlayer) {
-        String query = "DELETE FROM `pembelianbuah` WHERE `idPlayer` = " + idPlayer;
         return getStatusQuery(query);
     }
 

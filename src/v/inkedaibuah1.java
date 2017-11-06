@@ -192,6 +192,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         beli = new javax.swing.JButton();
         gambarbuah = new javax.swing.JLabel();
         labelharga = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         uang = new javax.swing.JLabel();
         btnapel = new javax.swing.JButton();
@@ -216,14 +217,14 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         leftbutton.setBorderPainted(false);
         leftbutton.setContentAreaFilled(false);
         leftbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        popup.getContentPane().add(leftbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 50, 30));
+        popup.getContentPane().add(leftbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 50, 30));
 
         rightbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/right.png"))); // NOI18N
         rightbutton.setBorder(null);
         rightbutton.setBorderPainted(false);
         rightbutton.setContentAreaFilled(false);
         rightbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        popup.getContentPane().add(rightbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 40, 30));
+        popup.getContentPane().add(rightbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 50, 30));
 
         jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         jml.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -245,7 +246,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
 
         labelkualitas.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
         labelkualitas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        popup.getContentPane().add(labelkualitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 150, 40));
+        popup.getContentPane().add(labelkualitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 220, 40));
 
         batal.setBorder(null);
         batal.setBorderPainted(false);
@@ -260,11 +261,16 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         popup.getContentPane().add(beli, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 493, 140, 70));
 
         gambarbuah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        popup.getContentPane().add(gambarbuah, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 134, 150, 130));
+        popup.getContentPane().add(gambarbuah, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 150, 130));
 
         labelharga.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
         labelharga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        popup.getContentPane().add(labelharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 84, 130, 20));
+        popup.getContentPane().add(labelharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, 20));
+
+        jLabel3.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Kualitas");
+        popup.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 30, 120, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupbuah.png"))); // NOI18N
         popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
@@ -424,6 +430,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     private javax.swing.JLabel gambarbuah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jml;
     private javax.swing.JLabel jmlapel;
     private javax.swing.JLabel jmlmangga;

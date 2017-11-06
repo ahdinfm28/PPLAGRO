@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import m.aset;
 import m.pembelian;
+import m.pengolahan;
 import m.player;
 import v.mainmenu;
 import v.map;
@@ -32,16 +33,18 @@ public class mapc {
     pasarmap vmappasar;
     String username;
     aset maset;
-    pembelian mharga;
+    pembelian mbeli;
     int number;
     player mplayer;
+    pengolahan molah;
 
     public mapc(String username) throws SQLException {
         this.username = username;
         this.maset = new aset();
         this.vmap = new map();
         this.mplayer = new player();
-        this.mharga = new pembelian();
+        this.mbeli = new pembelian();
+        this.molah = new pengolahan();
         vmap.setVisible(true);
         vmap.klikKembali(new acttombolkembali());
         vmap.klikGudang(new actTombolGudang());
@@ -60,7 +63,8 @@ public class mapc {
         this.username = username;
         this.maset = new aset();
         this.mplayer = new player();
-        this.mharga = new pembelian();
+        this.mbeli = new pembelian();
+        this.molah = new pengolahan();
         vmap.klikLanjut(new acttombollanjut());
         vmap.klikPermainanBaru(new acttombolnewgame());
         vmap.setNama(username);
@@ -86,7 +90,7 @@ public class mapc {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-               new mapc(username);
+                new mapc(username);
             } catch (SQLException ex) {
                 Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -98,8 +102,10 @@ public class mapc {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-                maset.resetPembelianBahan(mplayer.getIdPlayer(username));
-                maset.resetPembelianBuah(mplayer.getIdPlayer(username));
+               
+                mbeli.resetPembelianBahan(mplayer.getIdPlayer(username));
+                mbeli.resetPembelianBuah(mplayer.getIdPlayer(username));
+                mbeli.resetHasilPengolahan(mplayer.getIdPlayer(username));
                 maset.resetUang(mplayer.getIdPlayer(username));
                 new mapc(username);
                 // vmap.setUang(maset.getUang(username) + "");
@@ -176,8 +182,12 @@ public class mapc {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-            new pengolahanc(username);
-            vmap.dispose();
+            try {
+                new pengolahanc(username);
+                vmap.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         @Override
@@ -208,18 +218,18 @@ public class mapc {
         }
         System.out.println(number);
         if (number == 1) {
-            mharga.deleteHarga();
-            mharga.insertHarga1();
+            mbeli.deleteHarga();
+            mbeli.insertHarga1();
             System.out.println("harga1 diinputkan");
         } else if (number == 2) {
-            mharga.deleteHarga();
-            mharga.insertHarga2();
+            mbeli.deleteHarga();
+            mbeli.insertHarga2();
             System.out.println("harga2 diinputkan");
         } else if (number == 3) {
-            mharga.deleteHarga();
-            mharga.insertHarga3();
+            mbeli.deleteHarga();
+            mbeli.insertHarga3();
             System.out.println("harga3 diinputkan");
-        } 
+        }
         return number;
     }
 }
