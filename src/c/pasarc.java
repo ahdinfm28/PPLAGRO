@@ -38,7 +38,7 @@ public class pasarc {
         this.username = username;
         vpasar.setUang(maset.getUang(username) + "");
     }
-     private class acttombolkembali implements ActionListener {
+     private class acttombolkembali implements ActionListener { 
 
         @Override
         public void actionPerformed(ActionEvent ae) {

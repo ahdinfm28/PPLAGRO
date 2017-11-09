@@ -1051,6 +1051,7 @@ public class ingudang extends javax.swing.JFrame {
         bg.setText("jLabel2");
         nextgudang.getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        vbahan.setSize(new java.awt.Dimension(1366, 768));
         vbahan.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N

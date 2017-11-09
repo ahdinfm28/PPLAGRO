@@ -97,6 +97,7 @@ public class inpengolahan extends javax.swing.JFrame {
     public void klikSaladBuah(ActionListener a) {
         this.btnsaladbuah.addActionListener(a);
     }
+
     public void klikSalePisang(ActionListener a) {
         this.btnsalepisang.addActionListener(a);
     }
@@ -162,6 +163,10 @@ public class inpengolahan extends javax.swing.JFrame {
         gula8.setText(t + "");
         gula9.setText(t + "");
         gula10.setText(t + "");
+        gula11.setText(t + "");
+        gula14.setText(t + "");
+        gula12.setText(t + "");
+        gula13.setText(t + "");
         return t;
     }
 
@@ -171,12 +176,8 @@ public class inpengolahan extends javax.swing.JFrame {
         susu3.setText(teks + "");
         susu4.setText(teks + "");
         susu5.setText(teks + "");
-        susu6.setText(teks + "");
-        susu7.setText(teks + "");
-        susu8.setText(teks + "");
-        susu9.setText(teks + "");
-        susu10.setText(teks + "");
         susu11.setText(teks + "");
+
         return teks;
     }
 
@@ -206,6 +207,11 @@ public class inpengolahan extends javax.swing.JFrame {
 
     public int setJmlMentega(int teks) {
         mentega1.setText(teks + "");
+        mentega4.setText(teks + "");
+        mentega5.setText(teks + "");
+        mentega3.setText(teks + "");
+        mentega6.setText(teks + "");
+        mentega2.setText(teks + "");
         return teks;
     }
 
@@ -362,9 +368,13 @@ public class inpengolahan extends javax.swing.JFrame {
         String e = gula8.getText();
         String f = gula9.getText();
         String g = gula10.getText();
-        String get[] = {x, y, z, a, b, c, d, e, f, g};
+        String l = gula11.getText();
+        String h = gula12.getText();
+        String k = gula13.getText();
+        String j = gula14.getText();
+        String get[] = {x, y, z, a, b, c, d, e, f, g, h, k, j, l};
         String hasil = null;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 13; i++) {
             hasil = get[i];
         }
         return hasil;
@@ -376,15 +386,11 @@ public class inpengolahan extends javax.swing.JFrame {
         String z = susu3.getText();
         String a = susu4.getText();
         String b = susu5.getText();
-        String c = susu6.getText();
-        String d = susu7.getText();
-        String e = susu8.getText();
-        String f = susu9.getText();
-        String g = susu10.getText();
         String h = susu11.getText();
-        String get[] = {x, y, z, a, b};
+
+        String get[] = {x, y, z, a, b, h};
         String hasil = null;
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 6; i++) {
             hasil = get[i];
         }
         return hasil;
@@ -395,7 +401,18 @@ public class inpengolahan extends javax.swing.JFrame {
     }
 
     public String getJmlMentega() {
-        return mentega1.getText();
+        String a = mentega1.getText();
+        String c = mentega4.getText();
+        String d = mentega5.getText();
+        String e = mentega3.getText();
+        String f = mentega6.getText();
+        String g = mentega2.getText();
+        String get[] = {a, c, d, e, f, g};
+        String hasil = null;
+        for (int i = 0; i < 6; i++) {
+            hasil = get[i];
+        }
+        return hasil;
     }
 
     public String getJmlSirup() {
@@ -462,7 +479,6 @@ public class inpengolahan extends javax.swing.JFrame {
 //        }
 //        this.gif().setVisible(false);
 //    }
-
     public void tampilPesan1(String pesan) {
         JOptionPane.showMessageDialog(this, pesan);
     }
@@ -505,21 +521,21 @@ public class inpengolahan extends javax.swing.JFrame {
         telur5 = new javax.swing.JLabel();
         sp2 = new javax.swing.JLabel();
         tt6 = new javax.swing.JLabel();
-        susu6 = new javax.swing.JLabel();
+        mentega4 = new javax.swing.JLabel();
         gula10 = new javax.swing.JLabel();
         semangka4 = new javax.swing.JLabel();
         gula9 = new javax.swing.JLabel();
         sp1 = new javax.swing.JLabel();
         tt5 = new javax.swing.JLabel();
         telur4 = new javax.swing.JLabel();
-        susu7 = new javax.swing.JLabel();
-        susu8 = new javax.swing.JLabel();
+        mentega5 = new javax.swing.JLabel();
+        mentega3 = new javax.swing.JLabel();
         gula7 = new javax.swing.JLabel();
         sp4 = new javax.swing.JLabel();
         tt4 = new javax.swing.JLabel();
         telur1 = new javax.swing.JLabel();
         apel5 = new javax.swing.JLabel();
-        susu9 = new javax.swing.JLabel();
+        mentega6 = new javax.swing.JLabel();
         mangga5 = new javax.swing.JLabel();
         telur3 = new javax.swing.JLabel();
         tt3 = new javax.swing.JLabel();
@@ -530,12 +546,13 @@ public class inpengolahan extends javax.swing.JFrame {
         pisang3 = new javax.swing.JLabel();
         tb1 = new javax.swing.JLabel();
         tt1 = new javax.swing.JLabel();
-        susu10 = new javax.swing.JLabel();
+        mentega2 = new javax.swing.JLabel();
         melon3 = new javax.swing.JLabel();
         telur2 = new javax.swing.JLabel();
         tt2 = new javax.swing.JLabel();
         sp5 = new javax.swing.JLabel();
         gula6 = new javax.swing.JLabel();
+        gula11 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
         popup = new javax.swing.JFrame();
         left = new javax.swing.JButton();
@@ -580,6 +597,9 @@ public class inpengolahan extends javax.swing.JFrame {
         btnkripikpisang = new javax.swing.JButton();
         btnkripikmangga = new javax.swing.JButton();
         next = new javax.swing.JButton();
+        gula12 = new javax.swing.JLabel();
+        gula13 = new javax.swing.JLabel();
+        gula14 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         nextpengolahan.setUndecorated(true);
@@ -723,10 +743,10 @@ public class inpengolahan extends javax.swing.JFrame {
         tt6.setText("0");
         nextpengolahan.getContentPane().add(tt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 220, 30, -1));
 
-        susu6.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
-        susu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        susu6.setText("0");
-        nextpengolahan.getContentPane().add(susu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 160, 30, -1));
+        mentega4.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        mentega4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mentega4.setText("0");
+        nextpengolahan.getContentPane().add(mentega4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 160, 30, -1));
 
         gula10.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         gula10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -758,15 +778,15 @@ public class inpengolahan extends javax.swing.JFrame {
         telur4.setText("0");
         nextpengolahan.getContentPane().add(telur4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 380, 30, -1));
 
-        susu7.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
-        susu7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        susu7.setText("0");
-        nextpengolahan.getContentPane().add(susu7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 330, 30, -1));
+        mentega5.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        mentega5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mentega5.setText("0");
+        nextpengolahan.getContentPane().add(mentega5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 330, 30, -1));
 
-        susu8.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
-        susu8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        susu8.setText("0");
-        nextpengolahan.getContentPane().add(susu8, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 20, -1));
+        mentega3.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        mentega3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mentega3.setText("0");
+        nextpengolahan.getContentPane().add(mentega3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 20, -1));
 
         gula7.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         gula7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -793,10 +813,10 @@ public class inpengolahan extends javax.swing.JFrame {
         apel5.setText("0");
         nextpengolahan.getContentPane().add(apel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 380, 20, -1));
 
-        susu9.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
-        susu9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        susu9.setText("0");
-        nextpengolahan.getContentPane().add(susu9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 20, -1));
+        mentega6.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        mentega6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mentega6.setText("0");
+        nextpengolahan.getContentPane().add(mentega6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 20, -1));
 
         mangga5.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         mangga5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -841,17 +861,17 @@ public class inpengolahan extends javax.swing.JFrame {
         tb1.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         tb1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tb1.setText("0");
-        nextpengolahan.getContentPane().add(tb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 20, -1));
+        nextpengolahan.getContentPane().add(tb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, 30, 20));
 
         tt1.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         tt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tt1.setText("0");
-        nextpengolahan.getContentPane().add(tt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 640, 20, -1));
+        nextpengolahan.getContentPane().add(tt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 660, 20, -1));
 
-        susu10.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
-        susu10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        susu10.setText("0");
-        nextpengolahan.getContentPane().add(susu10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 20, -1));
+        mentega2.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        mentega2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mentega2.setText("0");
+        nextpengolahan.getContentPane().add(mentega2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 20, -1));
 
         melon3.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         melon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -877,6 +897,11 @@ public class inpengolahan extends javax.swing.JFrame {
         gula6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gula6.setText("0");
         nextpengolahan.getContentPane().add(gula6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 30, 20));
+
+        gula11.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        gula11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gula11.setText("0");
+        nextpengolahan.getContentPane().add(gula11, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 550, 30, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/inpengolahan2.png"))); // NOI18N
         background.setText("jLabel1");
@@ -1033,32 +1058,32 @@ public class inpengolahan extends javax.swing.JFrame {
         apel2.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         apel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         apel2.setText("0");
-        getContentPane().add(apel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 340, 40, 30));
+        getContentPane().add(apel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 330, 40, 30));
 
         minyak1.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         minyak1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         minyak1.setText("0");
-        getContentPane().add(minyak1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 410, 40, 30));
+        getContentPane().add(minyak1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 370, 40, 30));
 
         pisang2.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         pisang2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pisang2.setText("0");
-        getContentPane().add(pisang2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, 50, 30));
+        getContentPane().add(pisang2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 560, 50, 30));
 
         minyak2.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         minyak2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         minyak2.setText("0");
-        getContentPane().add(minyak2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 630, 50, 30));
+        getContentPane().add(minyak2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 600, 50, 30));
 
         minyak3.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         minyak3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         minyak3.setText("0");
-        getContentPane().add(minyak3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 630, 30, 30));
+        getContentPane().add(minyak3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 600, 30, 30));
 
         mangga2.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         mangga2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mangga2.setText("0");
-        getContentPane().add(mangga2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 50, 30));
+        getContentPane().add(mangga2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, 50, 30));
 
         btnjuspisang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/juspisang.png"))); // NOI18N
         btnjuspisang.setBorder(null);
@@ -1121,6 +1146,21 @@ public class inpengolahan extends javax.swing.JFrame {
         next.setContentAreaFilled(false);
         next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1233, 333, 110, 110));
+
+        gula12.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        gula12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gula12.setText("0");
+        getContentPane().add(gula12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 640, 20, 30));
+
+        gula13.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        gula13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gula13.setText("0");
+        getContentPane().add(gula13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 630, 30, 30));
+
+        gula14.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        gula14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gula14.setText("0");
+        getContentPane().add(gula14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 410, 20, 30));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/inpengolahan.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -1204,6 +1244,10 @@ public class inpengolahan extends javax.swing.JFrame {
     private javax.swing.JFrame gif;
     private javax.swing.JLabel gula1;
     private javax.swing.JLabel gula10;
+    private javax.swing.JLabel gula11;
+    private javax.swing.JLabel gula12;
+    private javax.swing.JLabel gula13;
+    private javax.swing.JLabel gula14;
     private javax.swing.JLabel gula2;
     private javax.swing.JLabel gula3;
     private javax.swing.JLabel gula4;
@@ -1228,6 +1272,11 @@ public class inpengolahan extends javax.swing.JFrame {
     private javax.swing.JLabel melon3;
     private javax.swing.JLabel melon4;
     private javax.swing.JLabel mentega1;
+    private javax.swing.JLabel mentega2;
+    private javax.swing.JLabel mentega3;
+    private javax.swing.JLabel mentega4;
+    private javax.swing.JLabel mentega5;
+    private javax.swing.JLabel mentega6;
     private javax.swing.JLabel minyak1;
     private javax.swing.JLabel minyak2;
     private javax.swing.JLabel minyak3;
@@ -1253,16 +1302,11 @@ public class inpengolahan extends javax.swing.JFrame {
     private javax.swing.JLabel sp4;
     private javax.swing.JLabel sp5;
     private javax.swing.JLabel susu1;
-    private javax.swing.JLabel susu10;
     private javax.swing.JLabel susu11;
     private javax.swing.JLabel susu2;
     private javax.swing.JLabel susu3;
     private javax.swing.JLabel susu4;
     private javax.swing.JLabel susu5;
-    private javax.swing.JLabel susu6;
-    private javax.swing.JLabel susu7;
-    private javax.swing.JLabel susu8;
-    private javax.swing.JLabel susu9;
     private javax.swing.JLabel tb1;
     private javax.swing.JLabel telur1;
     private javax.swing.JLabel telur2;

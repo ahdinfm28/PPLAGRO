@@ -247,7 +247,7 @@ public class supermarketc {
     private void tepungBerasAction() throws SQLException {
         int id = 2;
         int idbeli = mbelibahan.cekIdBeliBahan();
-        int tot = jml * 8000;
+        int tot = jml * 4000;
         int get = Integer.valueOf(supermarket.getjmltepungb());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
@@ -297,7 +297,7 @@ public class supermarketc {
     private void telurAction() throws SQLException {
         int id = 7;
         int idbeli = mbelibahan.cekIdBeliBahan();
-        int tot = jml * 20000;
+        int tot = jml * 1250;
         int get = Integer.valueOf(supermarket.getjmltelur());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
@@ -397,7 +397,7 @@ public class supermarketc {
     private void gulaAction() throws SQLException {
         int id = 1;
         int idbeli = mbelibahan.cekIdBeliBahan();
-        int tot = jml * 12000;
+        int tot = jml * 120;
         int get = Integer.valueOf(supermarket.getjmlgula());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
@@ -472,7 +472,7 @@ public class supermarketc {
     private void tepungTeriguAction() throws SQLException {
         int id = 10;
         int idbeli = mbelibahan.cekIdBeliBahan();
-        int tot = jml * 9000;
+        int tot = jml * 90;
         int get = Integer.valueOf(supermarket.getjmltepungt());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
