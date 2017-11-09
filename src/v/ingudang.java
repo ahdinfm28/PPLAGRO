@@ -22,20 +22,29 @@ public class ingudang extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void klikNext(ActionListener a) {
+    public void klikNexttoBahan(ActionListener a) {
         next.addActionListener(a);
     }
+    public void klikNexttoProduk(ActionListener a) {
+        nextproduk.addActionListener(a);
+    }
 
-    public void klikPrevios(ActionListener a) {
+    public void klikPreviousBahan(ActionListener a) {
         previous.addActionListener(a);
+    }
+    public void klikPreviousBuah(ActionListener a) {
+        prevbuah.addActionListener(a);
     }
 
     public void klikKembali(ActionListener a) {
         back.addActionListener(a);
     }
 
-    public JFrame next() {
+    public JFrame showproduk() {
         return nextgudang;
+    }
+    public JFrame showbahan() {
+        return vbahan;
     }
 
     public int setJmlApel1(int t) {
@@ -766,6 +775,8 @@ public class ingudang extends javax.swing.JFrame {
         sp = new javax.swing.JLabel();
         mentega = new javax.swing.JLabel();
         tt = new javax.swing.JLabel();
+        prevbuah = new javax.swing.JButton();
+        nextproduk = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         apel1 = new javax.swing.JLabel();
         apel2 = new javax.swing.JLabel();
@@ -787,7 +798,6 @@ public class ingudang extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         nextgudang.setUndecorated(true);
-        nextgudang.setPreferredSize(new java.awt.Dimension(1366, 768));
         nextgudang.setSize(new java.awt.Dimension(1366, 768));
         nextgudang.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1093,6 +1103,18 @@ public class ingudang extends javax.swing.JFrame {
         tt.setText("0");
         vbahan.getContentPane().add(tt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 610, 40, 30));
 
+        prevbuah.setBorder(null);
+        prevbuah.setBorderPainted(false);
+        prevbuah.setContentAreaFilled(false);
+        prevbuah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        vbahan.getContentPane().add(prevbuah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 383, 60, 70));
+
+        nextproduk.setBorder(null);
+        nextproduk.setBorderPainted(false);
+        nextproduk.setContentAreaFilled(false);
+        nextproduk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        vbahan.getContentPane().add(nextproduk, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 383, 70, 80));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/stokbahan.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         vbahan.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -1296,9 +1318,11 @@ public class ingudang extends javax.swing.JFrame {
     private javax.swing.JLabel minyak;
     private javax.swing.JButton next;
     private javax.swing.JFrame nextgudang;
+    private javax.swing.JButton nextproduk;
     private javax.swing.JLabel pisang1;
     private javax.swing.JLabel pisang2;
     private javax.swing.JLabel pisang3;
+    private javax.swing.JButton prevbuah;
     private javax.swing.JButton previous;
     private javax.swing.JLabel salad1;
     private javax.swing.JLabel salad2;
