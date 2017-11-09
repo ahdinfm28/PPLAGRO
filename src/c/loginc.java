@@ -33,13 +33,14 @@ public class loginc {
     pembelian mbeli;
     pengolahan molah;
 
-    public loginc() throws SQLException {
+    public loginc() throws SQLException, InterruptedException {
 
         this.vlogin = new login();
         this.mplayer = new player();
         this.maset = new aset();
         this.mbeli = new pembelian();
         this.molah = new pengolahan();
+        this.vmain = new mainmenu();
         vlogin.setVisible(true);
         vlogin.klikLogin(new acttombolLogin());
         vlogin.klikKembali(new acttombolKembali());
@@ -79,8 +80,11 @@ public class loginc {
                 } else if (mplayer.getPlayer(vlogin.getUsername(), vlogin.getPassword())) {
                     map v = new map();
                     new mapc(uname, v);
-                    System.out.println(uname);
+                    vmain.enable();
+                    vmain.dispose();
                     vlogin.dispose();
+                    System.out.println(uname);
+
                 } else {
                     vlogin.tampilPesan("Username/Password Salah");
                     vlogin.setUsername("");

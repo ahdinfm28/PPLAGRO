@@ -46,6 +46,7 @@ public class mapc {
         this.mbeli = new pembelian();
         this.molah = new pengolahan();
         vmap.setVisible(true);
+        vmap.enabledAll();
         vmap.klikKembali(new acttombolkembali());
         vmap.klikGudang(new actTombolGudang());
         vmap.klikPasar(new actTombolPasar());
@@ -54,7 +55,6 @@ public class mapc {
         vmap.setNama(username);
         System.out.println(username);
         vmap.invisibleTombol();
-        vmap.enabledRumah();
     }
 
     public mapc(String username, map v) throws SQLException {
@@ -65,10 +65,10 @@ public class mapc {
         this.mplayer = new player();
         this.mbeli = new pembelian();
         this.molah = new pengolahan();
-        vmap.klikLanjut(new acttombollanjut());
-        vmap.klikPermainanBaru(new acttombolnewgame());
-        vmap.setNama(username);
-        vmap.disabledRumah();
+        v.klikLanjut(new acttombollanjut());
+        v.klikPermainanBaru(new acttombolnewgame());
+        v.setNama(username);
+        v.disabledAll();
     }
 
     private class acttombolkembali implements ActionListener {
@@ -91,6 +91,7 @@ public class mapc {
         public void actionPerformed(ActionEvent ae) {
             try {
                 new mapc(username);
+                vmap.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -154,7 +155,12 @@ public class mapc {
 
         @Override
         public void mouseClicked(MouseEvent me) {
-
+            try {
+                new gudangc(username);
+                vmap.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(mapc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         @Override

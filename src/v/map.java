@@ -62,29 +62,40 @@ public class map extends javax.swing.JFrame {
         this.user.setText(t);
     }
 
-    public void invisibleTombol() {
+       public void invisibleTombol() {
         lanjut.setVisible(false);
         newgame.setVisible(false);
     }
 
-    public void disabledRumah() {
+    public void disabledAll() {
         gudang.setEnabled(false);
         pasar.setEnabled(false);
         pabrik.setEnabled(false);
+        bg.setEnabled(false);
+        user.setEnabled(false);
+        namagudang.setEnabled(false);
+        namapasar.setEnabled(false);
+        namapengolahan.setEnabled(false);
     }
-    public void enabledRumah() {
+
+    public void enabledAll() {
         gudang.setEnabled(true);
         pasar.setEnabled(true);
         pabrik.setEnabled(true);
+        bg.setEnabled(true);
+        user.setEnabled(true);
+        namagudang.setEnabled(true);
+        namapasar.setEnabled(true);
+        namapengolahan.setEnabled(true);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        namapasar = new javax.swing.JLabel();
+        namagudang = new javax.swing.JLabel();
+        namapengolahan = new javax.swing.JLabel();
         gudang = new javax.swing.JLabel();
         pabrik = new javax.swing.JLabel();
         pasar = new javax.swing.JLabel();
@@ -93,24 +104,24 @@ public class map extends javax.swing.JFrame {
         user = new javax.swing.JLabel();
         lanjut = new javax.swing.JButton();
         newgame = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
-        jLabel4.setText("PASAR");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, -1, -1));
+        namapasar.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        namapasar.setText("PASAR");
+        getContentPane().add(namapasar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 350, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
-        jLabel3.setText("GUDANG");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
+        namagudang.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        namagudang.setText("GUDANG");
+        getContentPane().add(namagudang, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
-        jLabel2.setText("PENGOLAHAN");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, -1, -1));
+        namapengolahan.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        namapengolahan.setText("PENGOLAHAN");
+        getContentPane().add(namapengolahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 660, -1, -1));
 
         gudang.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(gudang, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 280, 440));
@@ -164,8 +175,8 @@ public class map extends javax.swing.JFrame {
         newgame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/map.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1412, 770));
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/map.png"))); // NOI18N
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1412, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -221,13 +232,13 @@ public class map extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private javax.swing.JLabel bg;
     public javax.swing.JLabel gudang;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel labeluang;
     private javax.swing.JButton lanjut;
+    private javax.swing.JLabel namagudang;
+    private javax.swing.JLabel namapasar;
+    private javax.swing.JLabel namapengolahan;
     private javax.swing.JButton newgame;
     public javax.swing.JLabel pabrik;
     public javax.swing.JLabel pasar;
