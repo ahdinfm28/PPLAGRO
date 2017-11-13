@@ -35,6 +35,7 @@ public class pasarc {
         vpasar.klikSupermarket(new acttombolSupermarket());
         vpasar.klikKedai1(new acttombolKedai1());
         vpasar.klikKedai2(new acttombolKedai2());
+        vpasar.klikToko(new acttombolToko());
         this.username = username;
         vpasar.setUang(maset.getUang(username) + "");
     }
@@ -58,6 +59,18 @@ public class pasarc {
             try {
                 new supermarketc(username);
                 System.out.println("y");
+                vpasar.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(pasarc.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+     private class acttombolToko implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            try {
+                new penjualanc(username);
                 vpasar.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(pasarc.class.getName()).log(Level.SEVERE, null, ex);

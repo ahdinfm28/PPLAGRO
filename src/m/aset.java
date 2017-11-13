@@ -18,7 +18,7 @@ public class aset extends func {
     }
 
     public int getUang(String username) throws SQLException {
-        String query = "SELECT Uang FROM aset a join player p on p.idPlayer = a.idPlayer WHERE p.username = '" + username + "'";
+        String query = "SELECT uang FROM player WHERE username = '" + username + "'";
         return getDataInt(query);
     }
 
@@ -40,7 +40,7 @@ public class aset extends func {
     public int getJmlBuah(String username, int idBuah, int idKualitas) throws SQLException {
         String query = "SELECT sum(JumlahBeli) from pembelianbuah a join player b on a.idPlayer = b.idPlayer "
                 + "where a.idBuah='" + idBuah + "' and b.username='" + username + "' and "
-                + "a.idKualitas='"+idKualitas+"'";
+                + "a.idKualitas='" + idKualitas + "'";
         System.out.println(query);
         return getDataInt(query);
     }
@@ -57,35 +57,32 @@ public class aset extends func {
                 + "where a.idBahan='" + idBahan + "' and b.username='" + username + "'";
         return getDataInt(query);
     }
+
     public int getJmlProduk(String username, int idProduk, int idKualitas) throws SQLException {
         String query = "SELECT Jumlah from hasilpengolahan a join player b on a.idPlayer = b.idPlayer "
                 + "where a.idProduk='" + idProduk + "' and a.idKualitas='" + idKualitas + "' and b.username='" + username + "'";
         return getDataInt(query);
     }
-
-    public int cekIdAset() throws SQLException {
-        String query = "select IdAset from aset where IdAset = ";
-        return checkId(query);
+    public int getJmlProdukAll(String username, int idProduk) throws SQLException {
+        String query = "SELECT sum(a.Jumlah) from hasilpengolahan a join player b on a.idPlayer = b.idPlayer "
+                + "where a.idProduk='" + idProduk + "' and b.username='" + username + "'";
+        return getDataInt(query);
     }
 
-    public boolean insertAset(int idAset, int idPlayer) {
-        String query = "INSERT INTO `aset`(`idAset`, `idPlayer`, `Uang`) VALUES ('" + idAset + "','" + idPlayer + "','500000')";
+    public boolean insertAset(int idPlayer) {
+        String query = "UPDATE `player` SET `uang` = 5000000 WHERE `player`.`idPlayer` = '" + idPlayer + "';";
+        System.out.println(query);
         return getStatusQuery(query);
     }
 
     public boolean updateUang(int uang, String idPlayer) throws SQLException {
-        String query = "UPDATE `aset` SET `Uang` = '" + (uang + "") + "' WHERE `aset`.`idPlayer` = '" + idPlayer + "';";
+        String query = "UPDATE `player` SET `uang` = '" + (uang + "") + "' WHERE `player`.`idPlayer` = '" + idPlayer + "';";
         return getStatusQuery(query);
     }
 
-    public int updateMelon(String username) throws SQLException {
-        String query = "SELECT sum(bb.JumlahBeli)-1 from pembelianbuah bb join buah b on b.idBuah = bb.idBuah JOIN player p "
-                + "on p.idPlayer = bb.idPlayer WHERE p.username = '" + username + "' and bb.idBuah = 5 ";
-        return getDataInt(query);
-    }
 
     public boolean resetUang(String idPlayer) throws SQLException {
-        String query = "UPDATE `aset` SET `Uang` = 500000 WHERE `aset`.`idPlayer` = '" + idPlayer + "';";
+        String query = "UPDATE `player` SET `uang` = 5000000 WHERE `player`.`idPlayer` = '" + idPlayer + "';";
         System.out.println(query);
         return getStatusQuery(query);
     }

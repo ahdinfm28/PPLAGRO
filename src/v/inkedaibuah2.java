@@ -190,8 +190,8 @@ public class inkedaibuah2 extends javax.swing.JFrame {
         leftbutton = new javax.swing.JButton();
         rightbutton = new javax.swing.JButton();
         labelkualitas = new javax.swing.JLabel();
-        jml = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jml = new javax.swing.JTextField();
         bg = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         uang = new javax.swing.JLabel();
@@ -263,14 +263,16 @@ public class inkedaibuah2 extends javax.swing.JFrame {
         labelkualitas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         popup.getContentPane().add(labelkualitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 190, 30));
 
-        jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
-        jml.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jml.setText("1");
-        popup.getContentPane().add(jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 170, 50));
-
         jLabel2.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
         jLabel2.setText("Kualitas");
         popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+
+        jml.setBackground(new java.awt.Color(255, 255, 153));
+        jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 30)); // NOI18N
+        jml.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jml.setText("1");
+        jml.setBorder(null);
+        popup.getContentPane().add(jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 230, 90));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupbuah2.png"))); // NOI18N
         popup.getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -410,7 +412,7 @@ public class inkedaibuah2 extends javax.swing.JFrame {
     private javax.swing.JLabel gambarbuah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jml;
+    private javax.swing.JTextField jml;
     private javax.swing.JLabel jmlapel;
     private javax.swing.JLabel jmlmangga;
     private javax.swing.JLabel jmlmelon;

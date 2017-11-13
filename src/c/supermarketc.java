@@ -22,7 +22,6 @@ import m.player;
 import v.insupermarket;
 import v.mainmenu;
 import v.pasarmap;
-import v.popup_s;
 
 /**
  *
@@ -88,7 +87,7 @@ public class supermarketc {
         mayo = supermarket.setjmlmayo(maset.getJmlBahan(username, 6));
         sirup = supermarket.setjmlsirup(maset.getJmlBahan(username, 5));
         minyak = supermarket.setjmlminyak(maset.getJmlBahan(username, 3));
-        jml=supermarket.getTeksJumlah();
+        jml = supermarket.getTeksJumlah();
     }
 
     private class acttombolkembali implements ActionListener {
@@ -127,7 +126,7 @@ public class supermarketc {
             supermarket.popup().setVisible(true);
             supermarket.enable();
             supermarket.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/tepung.png")));
-            supermarket.setTeksJumlah("1");
+            //  supermarket.setTeksJumlah("1");
             supermarket.min.setVisible(false);
         }
 
@@ -247,13 +246,14 @@ public class supermarketc {
     private void tepungBerasAction() throws SQLException {
         int id = 2;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 4000;
         int get = Integer.valueOf(supermarket.getjmltepungb());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                tepungberas=tepungberas+jml;
+                tepungberas = tepungberas + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(tepungberas, id, mplayer.getIdPlayer(username));
@@ -262,6 +262,9 @@ public class supermarketc {
                 supermarket.setjmltepungb(tepungberas);
                 supermarket.popup().setVisible(false);
             } else {
+                statusTepungB = false;
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -272,13 +275,14 @@ public class supermarketc {
     private void pengembangAction() throws SQLException {
         int id = 9;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 4000;
         int get = Integer.valueOf(supermarket.getjmlvanili());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                pengembang=pengembang+jml;
+                pengembang = pengembang + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(pengembang, id, mplayer.getIdPlayer(username));
@@ -287,6 +291,8 @@ public class supermarketc {
                 supermarket.setjmlpengembang(pengembang);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -297,13 +303,14 @@ public class supermarketc {
     private void telurAction() throws SQLException {
         int id = 7;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 1250;
         int get = Integer.valueOf(supermarket.getjmltelur());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                telur=telur+jml;
+                telur = telur + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(telur, id, mplayer.getIdPlayer(username));
@@ -312,6 +319,8 @@ public class supermarketc {
                 supermarket.setjmltelur(telur);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -322,13 +331,14 @@ public class supermarketc {
     private void mentegaAction() throws SQLException {
         int id = 4;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 3000;
         int get = Integer.valueOf(supermarket.getjmlmentega());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                mentega=mentega+jml;
+                mentega = mentega + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(mentega, id, mplayer.getIdPlayer(username));
@@ -337,6 +347,8 @@ public class supermarketc {
                 supermarket.setUang(maset.getUang(username));
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -347,13 +359,14 @@ public class supermarketc {
     private void sirupAction() throws SQLException {
         int id = 5;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 20000;
         int get = Integer.valueOf(supermarket.getjmlsirup());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                sirup=sirup+jml;
+                sirup = sirup + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(sirup, id, mplayer.getIdPlayer(username));
@@ -362,6 +375,8 @@ public class supermarketc {
                 supermarket.setUang(maset.getUang(username));
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -371,6 +386,7 @@ public class supermarketc {
 
     private void susuAction() throws SQLException {
         int id = 8;
+        jml = supermarket.getTeksJumlah();
         int idbeli = mbelibahan.cekIdBeliBahan();
         int tot = jml * 1200;
         int get = Integer.valueOf(supermarket.getjmlsusu());
@@ -379,7 +395,7 @@ public class supermarketc {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                susu=susu+jml;
+                susu = susu + jml;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(susu, id, mplayer.getIdPlayer(username));
                 supermarket.tampilPesan("Transaksi Berhasil");
@@ -387,6 +403,8 @@ public class supermarketc {
                 supermarket.setUang(maset.getUang(username));
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -397,13 +415,14 @@ public class supermarketc {
     private void gulaAction() throws SQLException {
         int id = 1;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 120;
         int get = Integer.valueOf(supermarket.getjmlgula());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                gula=gula+jml;
+                gula = gula + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(gula, id, mplayer.getIdPlayer(username));
@@ -412,6 +431,8 @@ public class supermarketc {
                 supermarket.setjmlgula(gula);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -422,13 +443,14 @@ public class supermarketc {
     private void mayoAction() throws SQLException {
         int id = 6;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 6000;
         int get = Integer.valueOf(supermarket.getjmlmayo());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                mayo=mayo+jml;
+                mayo = mayo + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(mayo, id, mplayer.getIdPlayer(username));
@@ -437,6 +459,8 @@ public class supermarketc {
                 supermarket.setjmlmayo(mayo);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -447,13 +471,14 @@ public class supermarketc {
     private void minyakAction() throws SQLException {
         int id = 3;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 11000;
         int get = Integer.valueOf(supermarket.getjmlminyak());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                minyak=minyak+jml;
+                minyak = minyak + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(minyak, id, mplayer.getIdPlayer(username));
@@ -462,6 +487,8 @@ public class supermarketc {
                 supermarket.setjmlminyak(minyak);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -472,13 +499,14 @@ public class supermarketc {
     private void tepungTeriguAction() throws SQLException {
         int id = 10;
         int idbeli = mbelibahan.cekIdBeliBahan();
+        jml = supermarket.getTeksJumlah();
         int tot = jml * 90;
         int get = Integer.valueOf(supermarket.getjmltepungt());
         if (uang > (tot)) {
             int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                     + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
             if (Pilih == 0) {
-                tepungterigu=tepungterigu+jml;
+                tepungterigu = tepungterigu + jml;
                 uang = uang - tot;
                 maset.updateUang(uang, mplayer.getIdPlayer(username));
                 mbelibahan.tambahPembelianBahan(tepungterigu, id, mplayer.getIdPlayer(username));
@@ -487,6 +515,8 @@ public class supermarketc {
                 supermarket.setjmltepungt(tepungterigu);
                 supermarket.popup().setVisible(false);
             } else {
+                jml = 1;
+                supermarket.setTeksJumlah(jml + "");
                 supermarket.popup().setVisible(true);
             }
         } else {
@@ -501,7 +531,8 @@ public class supermarketc {
             if (jml <= 2) {
                 supermarket.min.setVisible(false);
             }
-            jml = jml - 1;
+            int jmlbaru = supermarket.getTeksJumlah();
+            jml = jmlbaru - 1;
             supermarket.setTeksJumlah(jml + "");
         }
     }
@@ -511,7 +542,8 @@ public class supermarketc {
         @Override
         public void actionPerformed(ActionEvent e) {
             supermarket.min.setVisible(true);
-            jml = jml + 1;
+            int jmlbaru = supermarket.getTeksJumlah();
+            jml = jmlbaru + 1;
             supermarket.setTeksJumlah(jml + "");
         }
     }

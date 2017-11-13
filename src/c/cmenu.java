@@ -189,6 +189,8 @@ public class cmenu {
             } catch (SQLException ex) {
                 Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
                 System.err.println("");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

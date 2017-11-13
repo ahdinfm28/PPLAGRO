@@ -187,13 +187,15 @@ public class insupermarket extends javax.swing.JFrame {
         this.batal.addActionListener(action);
     }
 
+
     public int getTeksJumlah() {
-        String hasil = jml.getText();
+        String hasil = tf_jml.getText();
         return Integer.valueOf(hasil);
     }
 
+
     public void setTeksJumlah(String teks) {
-        jml.setText(teks);
+        tf_jml.setText(teks);
     }
 
     public JFrame popup() {
@@ -226,8 +228,8 @@ public class insupermarket extends javax.swing.JFrame {
         min = new javax.swing.JButton();
         beli = new javax.swing.JButton();
         batal = new javax.swing.JButton();
-        jml = new javax.swing.JLabel();
         bahan = new javax.swing.JLabel();
+        tf_jml = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         uang = new javax.swing.JLabel();
         jmlmayo = new javax.swing.JLabel();
@@ -281,17 +283,19 @@ public class insupermarket extends javax.swing.JFrame {
         batal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         popup.getContentPane().add(batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 503, 150, 70));
 
-        jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 36)); // NOI18N
-        jml.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jml.setText("1");
-        popup.getContentPane().add(jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 294, 200, 60));
-
         bahan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/tepung.png"))); // NOI18N
         bahan.setText("jLabel4");
         popup.getContentPane().add(bahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 70, 90));
 
+        tf_jml.setBackground(new java.awt.Color(255, 255, 153));
+        tf_jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 30)); // NOI18N
+        tf_jml.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_jml.setText("1");
+        tf_jml.setBorder(null);
+        popup.getContentPane().add(tf_jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 230, 90));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupsupermarket.png"))); // NOI18N
-        popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+        popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 610));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -498,7 +502,6 @@ public class insupermarket extends javax.swing.JFrame {
     private javax.swing.JButton btntepung2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jml;
     private javax.swing.JLabel jmlgula;
     private javax.swing.JLabel jmlmayo;
     private javax.swing.JLabel jmlmentega;
@@ -511,6 +514,7 @@ public class insupermarket extends javax.swing.JFrame {
     private javax.swing.JLabel jmlvanili;
     public javax.swing.JButton min;
     private javax.swing.JFrame popup;
+    private javax.swing.JTextField tf_jml;
     public javax.swing.JLabel uang;
     // End of variables declaration//GEN-END:variables
 }

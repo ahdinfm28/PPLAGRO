@@ -32,10 +32,7 @@ public class mainmenu extends javax.swing.JFrame {
      */
     public mainmenu() throws InterruptedException {
         initComponents();
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int x = (int) tk.getScreenSize().width;
-        int y = (int) tk.getScreenSize().height;
-        this.setSize(x, y);
+        
     }
 
     public void loading() throws InterruptedException {

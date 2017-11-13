@@ -93,6 +93,8 @@ public class map extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lanjut = new javax.swing.JButton();
+        newgame = new javax.swing.JButton();
         namapasar = new javax.swing.JLabel();
         namagudang = new javax.swing.JLabel();
         namapengolahan = new javax.swing.JLabel();
@@ -102,14 +104,31 @@ public class map extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         labeluang = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
-        lanjut = new javax.swing.JButton();
-        newgame = new javax.swing.JButton();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lanjut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttoncontinue.png"))); // NOI18N
+        lanjut.setBorder(null);
+        lanjut.setBorderPainted(false);
+        lanjut.setContentAreaFilled(false);
+        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lanjut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lanjutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, -1));
+
+        newgame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttonnewgame.png"))); // NOI18N
+        newgame.setBorder(null);
+        newgame.setBorderPainted(false);
+        newgame.setContentAreaFilled(false);
+        newgame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
 
         namapasar.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         namapasar.setText("PASAR");
@@ -155,25 +174,6 @@ public class map extends javax.swing.JFrame {
         user.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 140, 40));
-
-        lanjut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttoncontinue.png"))); // NOI18N
-        lanjut.setBorder(null);
-        lanjut.setBorderPainted(false);
-        lanjut.setContentAreaFilled(false);
-        lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lanjut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanjutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, -1, -1));
-
-        newgame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttonnewgame.png"))); // NOI18N
-        newgame.setBorder(null);
-        newgame.setBorderPainted(false);
-        newgame.setContentAreaFilled(false);
-        newgame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/map.png"))); // NOI18N
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1412, 770));

@@ -127,29 +127,29 @@ public class pengolahanc {
     }
 
     public void cekkomposisi() {
-        if (melon < 1 || gula < 20 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
+        if (melon < 1 || gula < 30 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
             vpengolahan.btnbrownismelon.setEnabled(false);
-        } else if (melon >= 1 && gula >= 20 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
+        } else if (melon >= 1 && gula >= 30 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
             vpengolahan.btnbrownismelon.setEnabled(true);
         }
-        if (semangka < 1 || gula < 20 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
+        if (semangka < 1 || gula < 30 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
             vpengolahan.btnbrownissemangka.setEnabled(false);
-        } else if (semangka >= 1 && gula >= 20 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
+        } else if (semangka >= 1 && gula >= 30 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
             vpengolahan.btnbrownissemangka.setEnabled(true);
         }
-        if (pisang < 1 ||gula < 20 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
+        if (pisang < 1 ||gula < 30 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
             vpengolahan.btnbrownispisang.setEnabled(false);
-        } else if (pisang >= 1 && gula >= 20 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
+        } else if (pisang >= 1 && gula >= 30 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
             vpengolahan.btnbrownispisang.setEnabled(true);
         }
-        if (apel < 1 || gula < 20 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
+        if (apel < 1 || gula < 30 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
             vpengolahan.btnbrownisapel.setEnabled(false);
-        } else if (apel >= 1 && gula >= 20 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
+        } else if (apel >= 1 && gula >= 30 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
             vpengolahan.btnbrownisapel.setEnabled(true);
         }
-        if (mangga < 1 ||gula < 20 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
+        if (mangga < 1 ||gula < 30 || mentega < 6 || tepungt < 40 || telur < 10 || pengembang < 1) {
             vpengolahan.btnbrownismangga.setEnabled(false);
-        } else if (mangga >= 1 && gula >= 20 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
+        } else if (mangga >= 1 && gula >= 30 && mentega >=6  && tepungt >= 40 && telur >= 10 && pengembang >= 1) {
             vpengolahan.btnbrownismangga.setEnabled(true);
         }
         if (melon < 1 || susu < 10 || gula < 20) {
@@ -177,19 +177,19 @@ public class pengolahanc {
         } else if (mangga >= 1 && susu >= 10 && gula >= 20) {
             vpengolahan.btnjusmangga.setEnabled(true);
         }
-        if (apel < 1 || minyak < 3 || gula<3) {
+        if (apel < 1 || minyak < 3 || gula<10) {
             vpengolahan.btnkripikapel.setEnabled(false);
-        } else if (apel >= 1 && minyak >= 1 && gula>=3) {
+        } else if (apel >= 1 && minyak >= 1 && gula>=10) {
             vpengolahan.btnkripikapel.setEnabled(true);
         }
-        if (pisang < 1 || minyak < 3 || gula<3) {
+        if (pisang < 1 || minyak < 3 || gula<10) {
             vpengolahan.btnkripikpisang.setEnabled(false);
-        } else if (pisang >= 1 && minyak >= 1 && gula>=3) {
+        } else if (pisang >= 1 && minyak >= 1 && gula>=10) {
             vpengolahan.btnkripikpisang.setEnabled(true);
         }
-        if (mangga < 1 || minyak < 3 || gula<3) {
+        if (mangga < 1 || minyak < 3 || gula<10) {
             vpengolahan.btnkripikmangga.setEnabled(false);
-        } else if (mangga >= 1 && minyak >= 1 && gula>=3) {
+        } else if (mangga >= 1 && minyak >= 1 && gula>=10) {
             vpengolahan.btnkripikmangga.setEnabled(true);
         }
         if (pisang < 1 || minyak < 5 || mentega < 1 || tepungb < 1 || tepungt < 12 || gula<25) {
@@ -647,7 +647,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 melon = melon - 1;
                 mentega = mentega - 6;
-                gula = gula - 40;
+                gula = gula - 30;
                 pengembang = pengembang - 1;
                 telur = telur - 10;
                 tepungt = tepungt - 40;
@@ -688,7 +688,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 semangka = semangka - 1;
                 mentega = mentega - 6;
-                gula = gula - 40;
+                gula = gula - 30;
                 pengembang = pengembang - 1;
                 telur = telur - 10;
                 tepungt = tepungt - 40;
@@ -729,7 +729,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 pisang = pisang - 1;
                 mentega = mentega - 6;
-                gula = gula - 40;
+                gula = gula - 30;
                 pengembang = pengembang - 1;
                 telur = telur - 10;
                 tepungt = tepungt - 40;
@@ -770,7 +770,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 apel = apel - 1;
                 mentega = mentega - 6;
-                gula = gula - 40;
+                gula = gula - 30;
                 pengembang = pengembang - 1;
                 telur = telur - 10;
                 tepungt = tepungt - 40;
@@ -811,7 +811,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 apel = apel - 1;
                 minyak = minyak - 3;
-                gula = gula - 3;
+                gula = gula - 10;
                 molah.updateStokBuah(mplayer.getIdPlayer(username), idbuah, getIdKualitas, apel);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 3, minyak);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 1, gula);
@@ -843,7 +843,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 pisang = pisang - 1;
                 minyak = minyak - 3;
-                gula=gula-1;
+                gula=gula-10;
                 molah.updateStokBuah(mplayer.getIdPlayer(username), idbuah, getIdKualitas, pisang);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 3, minyak);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 1, gula);
@@ -875,7 +875,7 @@ public class pengolahanc {
             if (Pilih == 0) {
                 mangga = mangga - 1;
                 minyak = minyak - 3;
-                gula = gula - 3;
+                gula = gula - 10;
                 molah.updateStokBuah(mplayer.getIdPlayer(username), idbuah, getIdKualitas, mangga);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 3, minyak);
                 molah.updateStokBahan(mplayer.getIdPlayer(username), 1, gula);

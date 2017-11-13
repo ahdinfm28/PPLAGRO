@@ -22,7 +22,6 @@ public class pasarmap extends javax.swing.JFrame {
      */
     public pasarmap() {
         initComponents();
-        this.setVisible(true);
     }
 
     public void klikToko(ActionListener action) {

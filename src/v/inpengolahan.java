@@ -465,9 +465,9 @@ public class inpengolahan extends javax.swing.JFrame {
 
 //    public void popupgif() throws InterruptedException {
 //        this.gif().setVisible(true);
-//        bgif.setVisible(true);
-//        loadbar.setVisible(true);
-//        loadnum.setVisible(true);
+////        bgif.setVisible(true);
+////        loadbar.setVisible(true);
+////        loadnum.setVisible(true);
 //        for (int i = 0; i <= 100; i++) {
 //            Thread.sleep(50); //milisecond
 //            loadnum.setText(Integer.toString(i) + "%");
@@ -479,6 +479,7 @@ public class inpengolahan extends javax.swing.JFrame {
 //        }
 //        this.gif().setVisible(false);
 //    }
+    
     public void tampilPesan1(String pesan) {
         JOptionPane.showMessageDialog(this, pesan);
     }
@@ -908,7 +909,7 @@ public class inpengolahan extends javax.swing.JFrame {
         nextpengolahan.getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, -1));
 
         popup.setUndecorated(true);
-        popup.setSize(new java.awt.Dimension(550, 634));
+        popup.setSize(new java.awt.Dimension(552, 634));
         popup.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         left.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/left.png"))); // NOI18N
@@ -943,7 +944,7 @@ public class inpengolahan extends javax.swing.JFrame {
         popup.getContentPane().add(olah, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 503, 160, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupengolahan.png"))); // NOI18N
-        popup.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+        popup.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         gif.setUndecorated(true);
         gif.setSize(new java.awt.Dimension(340, 340));

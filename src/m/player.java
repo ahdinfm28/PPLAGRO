@@ -27,14 +27,14 @@ public class player extends func {
         return checkId(query);
     }
 
-    public boolean insertPlayer(int idPlayer, String username, String password) {
-        String query = "INSERT INTO `player` (`idPlayer`, `username`, `password`) VALUES ('" + idPlayer + "', '" + username
-                + "', '" + password + "')";
+    public boolean insertPlayer(int idPlayer, String username) {
+        String query = "INSERT INTO `player` (`idPlayer`, `username`, `uang`) VALUES ('" + idPlayer + "', '" + username
+                + "', '5000000')";
         return getStatusQuery(query);
     }
 
-    public boolean getPlayer(String username, String password) throws SQLException {
-        String query = "SELECT * FROM `player` WHERE  username = '" + username + "' AND password ='" + password + "'";
+    public boolean getPlayer(String username) throws SQLException {
+        String query = "SELECT * FROM `player` WHERE  username = '" + username + "'";
         boolean status = false;
         try {
             rs = con.getResult(query);
@@ -55,16 +55,12 @@ public class player extends func {
         return data;
     }
 
-    public boolean cekUsername(String username) throws SQLException {
-        String query = "SELECT `username` FROM `player` WHERE  username = '" + username + "'";
-        boolean status = false;
-        try {
-            rs = con.getResult(query);
-            if (rs.next()) {
-                status = true;
-            }
-        } catch (SQLException e) {
-        }
-        return status;
+    public String cekUsername(String username) throws SQLException {
+        String query = "SELECT `username` FROM `player` WHERE `username` = '" + username + "'";
+        ResultSet hasil = con.getResult(query);
+        hasil.next();
+        String data = hasil.getString(1).toLowerCase();
+        System.out.println(query);
+        return data;
     }
 }

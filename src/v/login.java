@@ -53,36 +53,21 @@ public class login extends javax.swing.JFrame {
         return username;
     }
 
-    public String getPassword() {
-        String password = tf_password.getText();
-        return password;
-    }
 
     public String getUsernameCreate() {
         String username = tf_createusername.getText();
         return username;
     }
 
-    public String getPasswordCreate() {
-        String password = tf_createpass.getText();
-        return password;
-    }
-
     public void setUsernameCreate(String text) {
         this.tf_createusername.setText(text);
     }
 
-    public void setPasswordCreate(String text) {
-        this.tf_createpass.setText(text);
-    }
 
     public void setUsername(String text) {
         this.tf_uname.setText(text);
     }
 
-    public void setPassword(String text) {
-        this.tf_password.setText(text);
-    }
 
     public void tampilPesan(String pesan) {
         JOptionPane.showMessageDialog(this, pesan);
@@ -119,44 +104,37 @@ public class login extends javax.swing.JFrame {
 
         createAkun = new javax.swing.JFrame();
         tf_createusername = new javax.swing.JTextField();
-        tf_createpass = new javax.swing.JPasswordField();
         buttontambah = new javax.swing.JButton();
         buttonbatal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        tf_uname = new javax.swing.JTextField();
         buttoncreate = new javax.swing.JButton();
         buttonlogin = new javax.swing.JButton();
         back = new javax.swing.JButton();
-        tf_password = new javax.swing.JPasswordField();
+        tf_uname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         createAkun.setMaximizedBounds(new java.awt.Rectangle(0, 0, 484, 519));
         createAkun.setUndecorated(true);
-        createAkun.setSize(new java.awt.Dimension(484, 519));
+        createAkun.setSize(new java.awt.Dimension(439, 410));
         createAkun.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tf_createusername.setBackground(new java.awt.Color(255, 255, 204));
         tf_createusername.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
         tf_createusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_createusername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
-        createAkun.getContentPane().add(tf_createusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 150, 190, 50));
-
-        tf_createpass.setBackground(new java.awt.Color(255, 255, 204));
-        tf_createpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tf_createpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
-        createAkun.getContentPane().add(tf_createpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 233, 190, 50));
+        createAkun.getContentPane().add(tf_createusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 320, 50));
 
         buttontambah.setBorder(null);
         buttontambah.setBorderPainted(false);
         buttontambah.setContentAreaFilled(false);
         buttontambah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        createAkun.getContentPane().add(buttontambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 393, 140, 50));
+        createAkun.getContentPane().add(buttontambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 140, 50));
 
         buttonbatal.setBorder(null);
         buttonbatal.setBorderPainted(false);
         buttonbatal.setContentAreaFilled(false);
         buttonbatal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        createAkun.getContentPane().add(buttonbatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 393, 140, 50));
+        createAkun.getContentPane().add(buttonbatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 130, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buatakun.png"))); // NOI18N
         createAkun.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -165,21 +143,17 @@ public class login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tf_uname.setFont(new java.awt.Font("DFPOP1-W9", 0, 18)); // NOI18N
-        tf_uname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(tf_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 180, 230, 60));
-
         buttoncreate.setBorder(null);
         buttoncreate.setBorderPainted(false);
         buttoncreate.setContentAreaFilled(false);
         buttoncreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(buttoncreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 473, 160, 70));
+        getContentPane().add(buttoncreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 160, 70));
 
         buttonlogin.setBorder(null);
         buttonlogin.setBorderPainted(false);
         buttonlogin.setContentAreaFilled(false);
         buttonlogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(buttonlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 473, 170, 60));
+        getContentPane().add(buttonlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 160, 60));
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/back.png"))); // NOI18N
         back.setBorder(null);
@@ -194,14 +168,16 @@ public class login extends javax.swing.JFrame {
                 backMouseExited(evt);
             }
         });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 110, 90));
 
-        tf_password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tf_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, 230, 60));
+        tf_uname.setBackground(new java.awt.Color(255, 255, 204));
+        tf_uname.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        tf_uname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_uname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
+        getContentPane().add(tf_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 360, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/Login.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,9 +236,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JFrame createAkun;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField tf_createpass;
     private javax.swing.JTextField tf_createusername;
-    private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_uname;
     // End of variables declaration//GEN-END:variables
 }

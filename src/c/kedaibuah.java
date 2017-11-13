@@ -344,9 +344,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
+            jml = vkedai1.getTeksJumlah();
             int tot = jml * harga;
-            //           int stok = Integer.valueOf(vkedai1.getJmlSemangka());
-            //           int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -362,6 +361,8 @@ public class kedaibuah {
                     System.out.println("kedai1" + semangka);
                     vkedai1.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai1.setTeksJumlah(jml + "");
                     vkedai1.popup().setVisible(true);
                 }
             } else {
@@ -371,9 +372,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
+            jml = vkedai2.getTeksJumlah();
             int tot = jml * harga;
-//            int stok = Integer.valueOf(vkedai2.getJmlSemangka());
-//            int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -388,6 +388,8 @@ public class kedaibuah {
                     vkedai2.setJmlSemangka(semangka);
                     vkedai2.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai2.setTeksJumlah(jml + "");
                     vkedai2.popup().setVisible(true);
                 }
             } else {
@@ -403,9 +405,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
+            jml = vkedai1.getTeksJumlah();
             int tot = jml * harga;
-            //          int stok = Integer.valueOf(vkedai1.getJmlMelon());
-            //          int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -423,15 +424,16 @@ public class kedaibuah {
                     vkedai1.popup().setVisible(true);
                 }
             } else {
+                jml = 1;
+                vkedai1.setTeksJumlah(jml + "");
                 vkedai1.tampilPesan("Uang anda tidak cukup!");
             }
         } else if (kedai2) {
             int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
+            jml = vkedai2.getTeksJumlah();
             int tot = jml * harga;
-            //        int stok = Integer.valueOf(vkedai2.getJmlMelon());
-            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -446,6 +448,8 @@ public class kedaibuah {
                     vkedai2.setJmlMelon(melon);
                     vkedai2.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai2.setTeksJumlah(jml + "");
                     vkedai2.popup().setVisible(true);
                 }
             } else {
@@ -461,9 +465,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
+            jml = vkedai1.getTeksJumlah();
             int tot = jml * harga;
-            //        int stok = Integer.valueOf(vkedai1.getJmlMangga());
-            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -478,6 +481,8 @@ public class kedaibuah {
                     vkedai1.setJmlMangga(mangga);
                     vkedai1.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai1.setTeksJumlah(jml + "");
                     vkedai1.popup().setVisible(true);
                 }
             } else {
@@ -487,9 +492,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
+            jml = vkedai2.getTeksJumlah();
             int tot = jml * harga;
-            //        int stok = Integer.valueOf(vkedai2.getJmlMangga());
-            //        int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -504,6 +508,8 @@ public class kedaibuah {
                     vkedai2.setJmlMangga(mangga);
                     vkedai2.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai2.setTeksJumlah(jml + "");
                     vkedai2.popup().setVisible(true);
                 }
             } else {
@@ -519,9 +525,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
+            jml = vkedai1.getTeksJumlah();
             int tot = jml * harga;
-            //        int stok = Integer.valueOf(vkedai1.getJmlApel());
-            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -536,6 +541,8 @@ public class kedaibuah {
                     vkedai1.setJmlApel(apel);
                     vkedai1.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai1.setTeksJumlah(jml + "");
                     vkedai1.popup().setVisible(true);
                 }
             } else {
@@ -545,9 +552,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
+            jml = vkedai2.getTeksJumlah();
             int tot = jml * harga;
-            //        int stok = Integer.valueOf(vkedai2.getJmlApel());
-            //        int totjml = stok + jml;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -562,6 +568,8 @@ public class kedaibuah {
                     vkedai2.setJmlApel(apel);
                     vkedai2.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai2.setTeksJumlah(jml + "");
                     vkedai2.popup().setVisible(true);
                 }
             } else {
@@ -577,9 +585,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai1.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai1.getTeksHarga();
+            jml = vkedai1.getTeksJumlah();
             int tot = jml * harga;
-            //      int stok = Integer.valueOf(vkedai1.getJmlPisang());
-            //  int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -594,6 +601,8 @@ public class kedaibuah {
                     vkedai1.setJmlPisang(pisang);
                     vkedai1.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai1.setTeksJumlah(jml + "");
                     vkedai1.popup().setVisible(true);
                 }
             } else {
@@ -603,9 +612,8 @@ public class kedaibuah {
             int idKualitas = mbelibuah.getIdKualitas(vkedai2.getTeksKualitas());
             int jmlbuah = maset.getJmlBuah(username, id, idKualitas);
             int harga = vkedai2.getTeksHarga();
+            jml = vkedai2.getTeksJumlah();
             int tot = jml * harga;
-            //       int stok = Integer.valueOf(vkedai2.getJmlPisang());
-            //       int totjml = jml + stok;
             if (uang > (tot)) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi membeli?", "Konfirmasi Pembelian", JOptionPane.YES_NO_OPTION);
@@ -620,6 +628,8 @@ public class kedaibuah {
                     vkedai2.setJmlPisang(pisang);
                     vkedai2.popup().setVisible(false);
                 } else {
+                    jml = 1;
+                    vkedai2.setTeksJumlah(jml + "");
                     vkedai2.popup().setVisible(true);
                 }
             } else {
@@ -636,13 +646,15 @@ public class kedaibuah {
                 if (jml <= 2) {
                     vkedai1.min.setVisible(false);
                 }
-                jml = jml - 1;
+                int jmlbaru = vkedai1.getTeksJumlah();
+                jml = jmlbaru - 1;
                 vkedai1.setTeksJumlah(jml + "");
             } else if (kedai2) {
                 if (jml <= 2) {
                     vkedai2.min.setVisible(false);
                 }
-                jml = jml - 1;
+                int jmlbaru = vkedai2.getTeksJumlah();
+                jml = jmlbaru - 1;
                 vkedai2.setTeksJumlah(jml + "");
             }
         }
@@ -654,11 +666,13 @@ public class kedaibuah {
         public void actionPerformed(ActionEvent e) {
             if (kedai1) {
                 vkedai1.min.setVisible(true);
-                jml = jml + 1;
+                int jmlbaru = vkedai1.getTeksJumlah();
+                jml = jmlbaru + 1;
                 vkedai1.setTeksJumlah(jml + "");
             } else if (kedai2) {
                 vkedai2.min.setVisible(true);
-                jml = jml + 1;
+                int jmlbaru = vkedai2.getTeksJumlah();
+                jml = jmlbaru + 1;
                 vkedai2.setTeksJumlah(jml + "");
             }
         }

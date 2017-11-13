@@ -14,6 +14,7 @@ public class koneksi {
 
     Connection con;
     Statement stm;
+    ResultSet rs;
 
     public koneksi() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/buahagia";
@@ -29,7 +30,8 @@ public class koneksi {
     }
 
     public ResultSet getResult(String query) throws SQLException {
-        ResultSet rs = stm.executeQuery(query);
+        this.rs = stm.executeQuery(query);
         return rs;
     }
+
 }

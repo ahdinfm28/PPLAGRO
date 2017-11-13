@@ -65,6 +65,7 @@ public class mapc {
         this.mplayer = new player();
         this.mbeli = new pembelian();
         this.molah = new pengolahan();
+        v.klikKembali(new acttombolkembali());
         v.klikLanjut(new acttombollanjut());
         v.klikPermainanBaru(new acttombolnewgame());
         v.setNama(username);
@@ -78,6 +79,7 @@ public class mapc {
             try {
                 mainmenu v = new mainmenu();
                 cmenu c = new cmenu(v);
+                vmap.dispose();
 
             } catch (InterruptedException ex) {
                 Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
@@ -103,7 +105,7 @@ public class mapc {
         @Override
         public void actionPerformed(ActionEvent ae) {
             try {
-               
+
                 mbeli.resetPembelianBahan(mplayer.getIdPlayer(username));
                 mbeli.resetPembelianBuah(mplayer.getIdPlayer(username));
                 mbeli.resetHasilPengolahan(mplayer.getIdPlayer(username));

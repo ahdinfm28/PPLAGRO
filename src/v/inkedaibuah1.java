@@ -131,7 +131,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     }
 
     public int getTeksJumlah() {
-        String hasil = jml.getText();
+        String hasil = tf_jml.getText();
         return Integer.valueOf(hasil);
     }
 
@@ -145,7 +145,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     }
 
     public void setTeksJumlah(String teks) {
-        jml.setText(teks);
+        tf_jml.setText(teks);
     }
 
     public void setTeksHarga(String teks) {
@@ -184,7 +184,6 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         popup = new javax.swing.JFrame();
         leftbutton = new javax.swing.JButton();
         rightbutton = new javax.swing.JButton();
-        jml = new javax.swing.JLabel();
         add = new javax.swing.JButton();
         min = new javax.swing.JButton();
         labelkualitas = new javax.swing.JLabel();
@@ -193,6 +192,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         gambarbuah = new javax.swing.JLabel();
         labelharga = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        tf_jml = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         uang = new javax.swing.JLabel();
         btnapel = new javax.swing.JButton();
@@ -226,17 +226,16 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         rightbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         popup.getContentPane().add(rightbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 50, 30));
 
-        jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
-        jml.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jml.setText("1");
-        jml.setToolTipText("");
-        popup.getContentPane().add(jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 324, 200, 60));
-
         add.setBorder(null);
         add.setBorderPainted(false);
         add.setContentAreaFilled(false);
         add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        popup.getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 323, 70, 70));
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        popup.getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 70, 70));
 
         min.setBorder(null);
         min.setBorderPainted(false);
@@ -271,6 +270,13 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Kualitas");
         popup.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 30, 120, -1));
+
+        tf_jml.setBackground(new java.awt.Color(204, 255, 153));
+        tf_jml.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
+        tf_jml.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_jml.setText("1");
+        tf_jml.setBorder(null);
+        popup.getContentPane().add(tf_jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 230, 90));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupbuah.png"))); // NOI18N
         popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
@@ -381,6 +387,10 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnpisangActionPerformed
 
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -431,7 +441,6 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jml;
     private javax.swing.JLabel jmlapel;
     private javax.swing.JLabel jmlmangga;
     private javax.swing.JLabel jmlmelon;
@@ -443,6 +452,7 @@ public class inkedaibuah1 extends javax.swing.JFrame {
     public javax.swing.JButton min;
     private javax.swing.JFrame popup;
     public javax.swing.JButton rightbutton;
+    private javax.swing.JTextField tf_jml;
     private javax.swing.JLabel uang;
     // End of variables declaration//GEN-END:variables
 }

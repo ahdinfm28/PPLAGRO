@@ -75,9 +75,7 @@ public class loginc {
                 String uname = vlogin.getUsername();
                 if (vlogin.getUsername().isEmpty()) {
                     vlogin.tampilPesan("Username gabole kosong");
-                } else if (vlogin.getPassword().isEmpty()) {
-                    vlogin.tampilPesan("Password gabole kosong");
-                } else if (mplayer.getPlayer(vlogin.getUsername(), vlogin.getPassword())) {
+                } else if (mplayer.getPlayer(vlogin.getUsername())) {
                     map v = new map();
                     new mapc(uname, v);
                     vmain.enable();
@@ -88,7 +86,6 @@ public class loginc {
                 } else {
                     vlogin.tampilPesan("Username/Password Salah");
                     vlogin.setUsername("");
-                    vlogin.setPassword("");
                 }
             } catch (SQLException ex) {
                 System.out.println("ada sesuatu");
@@ -114,26 +111,22 @@ public class loginc {
             try {
                 int idPlayer = mplayer.cekIdP();
                 String uname = vlogin.getUsernameCreate();
-                String pass = vlogin.getPasswordCreate();
-                System.out.println(uname);
+                System.out.println("uname e " +uname);
                 if (uname.equals("")) {
                     vlogin.tampilPesanCreate("username harus diisi");
-                } else if (pass.equals("")) {
-                    vlogin.tampilPesanCreate("password harus diisi");
-                } else if (vlogin.getUsernameCreate().equals(mplayer.cekUsername(uname))) {
+                } else if (uname.equalsIgnoreCase(mplayer.cekUsername(uname))) {
                     vlogin.tampilPesanCreate("Username telah digunakan!");
                 } else {
-                    mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate(), vlogin.getPasswordCreate());
-                    maset.insertAset(maset.cekIdAset(), idPlayer);
+                    mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate());
+                    maset.insertAset(idPlayer);
                     mbeli.insertBeliBuah(String.valueOf(idPlayer));
                     mbeli.insertBeliBahan(String.valueOf(idPlayer));
                     molah.insertHasilOlah(String.valueOf(idPlayer));
                     vlogin.tampilPesanCreate("Akun berhasil dibuat");
                     vlogin.setUsernameCreate("");
-                    vlogin.setPasswordCreate("");
                     vlogin.createAccount().setVisible(false);
                     vlogin.enable();
-                    System.out.println("isine" + mplayer.cekUsername(vlogin.getUsernameCreate()));
+                    System.out.println("isine" + vlogin.getUsernameCreate().equals(mplayer.cekUsername(uname)));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(loginc.class.getName()).log(Level.SEVERE, null, ex);

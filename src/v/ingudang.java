@@ -798,6 +798,7 @@ public class ingudang extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         nextgudang.setUndecorated(true);
+        nextgudang.setPreferredSize(new java.awt.Dimension(1366, 768));
         nextgudang.setSize(new java.awt.Dimension(1366, 768));
         nextgudang.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1051,6 +1052,7 @@ public class ingudang extends javax.swing.JFrame {
         bg.setText("jLabel2");
         nextgudang.getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        vbahan.setUndecorated(true);
         vbahan.setSize(new java.awt.Dimension(1366, 768));
         vbahan.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
