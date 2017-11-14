@@ -256,7 +256,7 @@ public class insupermarket extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         popup.setUndecorated(true);
-        popup.setSize(new java.awt.Dimension(587, 640));
+        popup.setSize(new java.awt.Dimension(550, 610));
         popup.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         add.setBorder(null);

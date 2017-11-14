@@ -27,12 +27,14 @@ import sun.audio.*;
  */
 public class mainmenu extends javax.swing.JFrame {
 
+    AudioInputStream audio;
+    Clip clip;
+
     /**
      * Creates new form PPLAGRO
      */
     public mainmenu() throws InterruptedException {
         initComponents();
-        
     }
 
     public void loading() throws InterruptedException {
@@ -49,6 +51,7 @@ public class mainmenu extends javax.swing.JFrame {
             }
         }
     }
+
 
     public void kliktombolpetunjuk(MouseListener a) {
         ibutton.addMouseListener(a);
@@ -85,9 +88,6 @@ public class mainmenu extends javax.swing.JFrame {
         ibutton.setVisible(true);
         vol.setVisible(true);
     }
-
-   
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -193,7 +193,7 @@ public class mainmenu extends javax.swing.JFrame {
         getContentPane().add(vol, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 670, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/1..png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1390, 800));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -232,7 +232,7 @@ public class mainmenu extends javax.swing.JFrame {
     }//GEN-LAST:event_pbuttonMouseClicked
 
     private void volActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volActionPerformed
-
+      
     }//GEN-LAST:event_volActionPerformed
 
     /**

@@ -119,7 +119,7 @@ public class login extends javax.swing.JFrame {
         createAkun.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tf_createusername.setBackground(new java.awt.Color(255, 255, 204));
-        tf_createusername.setFont(new java.awt.Font("DFPOP1-W9", 0, 14)); // NOI18N
+        tf_createusername.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         tf_createusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_createusername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
         createAkun.getContentPane().add(tf_createusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 320, 50));
@@ -141,19 +141,20 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttoncreate.setBorder(null);
         buttoncreate.setBorderPainted(false);
         buttoncreate.setContentAreaFilled(false);
         buttoncreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(buttoncreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 160, 70));
+        getContentPane().add(buttoncreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 160, 70));
 
         buttonlogin.setBorder(null);
         buttonlogin.setBorderPainted(false);
         buttonlogin.setContentAreaFilled(false);
         buttonlogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(buttonlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 160, 60));
+        getContentPane().add(buttonlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 160, 70));
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/back.png"))); // NOI18N
         back.setBorder(null);
@@ -168,16 +169,17 @@ public class login extends javax.swing.JFrame {
                 backMouseExited(evt);
             }
         });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 110, 90));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, 110, 90));
 
         tf_uname.setBackground(new java.awt.Color(255, 255, 204));
         tf_uname.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         tf_uname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_uname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
-        getContentPane().add(tf_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 360, 60));
+        getContentPane().add(tf_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 360, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/Login.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, -1));
+        jLabel2.setPreferredSize(new java.awt.Dimension(1366, 768));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -76,14 +76,9 @@ public class mapc {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            try {
-                mainmenu v = new mainmenu();
-                cmenu c = new cmenu(v);
-                vmap.dispose();
-
-            } catch (InterruptedException ex) {
-                Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            // mainmenu v = new mainmenu();
+            // cmenu c = new cmenu(v);
+            vmap.dispose();
         }
     }
 

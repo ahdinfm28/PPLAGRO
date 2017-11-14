@@ -40,7 +40,6 @@ public class loginc {
         this.maset = new aset();
         this.mbeli = new pembelian();
         this.molah = new pengolahan();
-        this.vmain = new mainmenu();
         vlogin.setVisible(true);
         vlogin.klikLogin(new acttombolLogin());
         vlogin.klikKembali(new acttombolKembali());
@@ -53,17 +52,9 @@ public class loginc {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            try {
-                vlogin.dispose();
-                mainmenu v = new mainmenu();
-                cmenu c = new cmenu(v);
-
-//  vlogin.dispose();
-//vmain.enable();
-//  mainmenu v = new mainmenu();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(loginc.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            vlogin.dispose();
+//                mainmenu v = new mainmenu();
+//                cmenu c = new cmenu(v);
         }
     }
 
@@ -78,8 +69,6 @@ public class loginc {
                 } else if (mplayer.getPlayer(vlogin.getUsername())) {
                     map v = new map();
                     new mapc(uname, v);
-                    vmain.enable();
-                    vmain.dispose();
                     vlogin.dispose();
                     System.out.println(uname);
 
@@ -111,11 +100,12 @@ public class loginc {
             try {
                 int idPlayer = mplayer.cekIdP();
                 String uname = vlogin.getUsernameCreate();
-                System.out.println("uname e " +uname);
+                System.out.println("uname e " + uname);
                 if (uname.equals("")) {
                     vlogin.tampilPesanCreate("username harus diisi");
-                } else if (uname.equalsIgnoreCase(mplayer.cekUsername(uname))) {
+                } else if (mplayer.cekUsername(uname)) {
                     vlogin.tampilPesanCreate("Username telah digunakan!");
+                    vlogin.setUsernameCreate("");
                 } else {
                     mplayer.insertPlayer(idPlayer, vlogin.getUsernameCreate());
                     maset.insertAset(idPlayer);
@@ -125,8 +115,9 @@ public class loginc {
                     vlogin.tampilPesanCreate("Akun berhasil dibuat");
                     vlogin.setUsernameCreate("");
                     vlogin.createAccount().setVisible(false);
+                    vlogin.setVisible(true);
                     vlogin.enable();
-                    System.out.println("isine" + vlogin.getUsernameCreate().equals(mplayer.cekUsername(uname)));
+                    System.out.println("isine" + mplayer.cekUsername(uname));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(loginc.class.getName()).log(Level.SEVERE, null, ex);

@@ -1091,6 +1091,7 @@ public class buahagiashop extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         nextshop.setUndecorated(true);
+        nextshop.setPreferredSize(new java.awt.Dimension(1366, 768));
         nextshop.setSize(new java.awt.Dimension(1366, 768));
         nextshop.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1236,7 +1237,7 @@ public class buahagiashop extends javax.swing.JFrame {
         nextshop.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 720, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/shop2.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setPreferredSize(new java.awt.Dimension(1366, 768));
         nextshop.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         popup.setUndecorated(true);
@@ -1252,6 +1253,11 @@ public class buahagiashop extends javax.swing.JFrame {
         jml.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jml.setText("1");
         jml.setBorder(null);
+        jml.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmlActionPerformed(evt);
+            }
+        });
         popup.getContentPane().add(jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 281, 230, 90));
 
         add.setBorder(null);
@@ -1308,7 +1314,7 @@ public class buahagiashop extends javax.swing.JFrame {
         popup.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupjual.png"))); // NOI18N
-        popup.getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, -1));
+        popup.getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         detail1.setUndecorated(true);
         detail1.setSize(new java.awt.Dimension(1366, 768));
@@ -1561,8 +1567,7 @@ public class buahagiashop extends javax.swing.JFrame {
         detail1.getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1243, 33, 80, 60));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/detailpenjualan1.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        detail1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, -1));
+        detail1.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         detail2.setUndecorated(true);
         detail2.setSize(new java.awt.Dimension(1366, 768));
@@ -1815,11 +1820,11 @@ public class buahagiashop extends javax.swing.JFrame {
         detail2.getContentPane().add(jma3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 370, 50, 20));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/detailpenjualan2.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
         detail2.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_bp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownispisang.png"))); // NOI18N
@@ -1973,7 +1978,7 @@ public class buahagiashop extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1132, 700, 130, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/shop1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -1988,6 +1993,10 @@ public class buahagiashop extends javax.swing.JFrame {
         ImageIcon awal = new ImageIcon(getClass().getResource("/ui export/back.png"));
         back.setIcon(awal);
     }//GEN-LAST:event_backMouseExited
+
+    private void jmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmlActionPerformed
 
     /**
      * @param args the command line arguments

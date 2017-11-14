@@ -55,12 +55,22 @@ public class player extends func {
         return data;
     }
 
-    public String cekUsername(String username) throws SQLException {
-        String query = "SELECT `username` FROM `player` WHERE `username` = '" + username + "'";
-        ResultSet hasil = con.getResult(query);
-        hasil.next();
-        String data = hasil.getString(1).toLowerCase();
-        System.out.println(query);
-        return data;
+    public boolean cekUsername(String username) throws SQLException {
+        String query = "SELECT `username` FROM `player` WHERE  `username` = '" + username + "'";
+        boolean status = false;
+        try {
+            rs = con.getResult(query);
+            if (rs.next()) {
+                rs.getString("username");
+                System.out.println(rs.getString("username"));
+                System.out.println("anu");
+                status = true;
+            }
+            System.out.println("rs" + rs);
+            System.out.println(query);
+        } catch (SQLException e) {
+            System.out.println("hemmmmmmmm");
+        }
+        return status;
     }
 }

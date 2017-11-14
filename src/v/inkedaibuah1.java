@@ -209,7 +209,8 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         popup.setUndecorated(true);
-        popup.setSize(new java.awt.Dimension(516, 627));
+        popup.setPreferredSize(new java.awt.Dimension(526, 627));
+        popup.setSize(new java.awt.Dimension(526, 627));
         popup.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         leftbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/left.png"))); // NOI18N
@@ -276,14 +277,15 @@ public class inkedaibuah1 extends javax.swing.JFrame {
         tf_jml.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_jml.setText("1");
         tf_jml.setBorder(null);
-        popup.getContentPane().add(tf_jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 230, 90));
+        popup.getContentPane().add(tf_jml, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 230, 90));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/popupbuah.png"))); // NOI18N
-        popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+        popup.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         uang.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N

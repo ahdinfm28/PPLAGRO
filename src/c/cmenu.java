@@ -119,7 +119,7 @@ public class cmenu {
         public void mouseClicked(MouseEvent me) {
             petunjuk vp = new petunjuk();
             cmenu c = new cmenu(vp);
-            vmain.setVisible(false);
+       //     vmain.setVisible(false);
 
         }
 
@@ -151,7 +151,7 @@ public class cmenu {
         public void mouseClicked(MouseEvent me) {
             tentang vt = new tentang();
             cmenu c = new cmenu(vt);
-            vmain.setVisible(false);
+      //      vmain.setVisible(false);
 
         }
 
@@ -184,8 +184,7 @@ public class cmenu {
             try {
 
                 loginc c = new loginc();
-                vmain.disable();
-
+             //   vmain.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
                 System.err.println("");
@@ -220,18 +219,14 @@ public class cmenu {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            try {
-                mainmenu v = new mainmenu();
-                cmenu c = new cmenu(v);
-                if (petunjuk) {
-                    petunjuk = false;
-                    vpetunjuk.dispose();
-                } else if (tentang) {
-                    tentang = false;
-                    vtentang.dispose();
-                }
-            } catch (InterruptedException ex) {
-                Logger.getLogger(cmenu.class.getName()).log(Level.SEVERE, null, ex);
+            //  mainmenu v = new mainmenu();
+            //  cmenu c = new cmenu(v);
+            if (petunjuk) {
+                petunjuk = false;
+                vpetunjuk.dispose();
+            } else if (tentang) {
+                tentang = false;
+                vtentang.dispose();
             }
         }
     }

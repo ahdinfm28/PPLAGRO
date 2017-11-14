@@ -20,5 +20,6 @@ public class PPLAGRO {
         mainmenu v = new mainmenu();
         cmenu c = new cmenu(v);
         // v.loading();
+      //  c.music();
     }
 }

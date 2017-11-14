@@ -108,7 +108,7 @@ public class map extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lanjut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttoncontinue.png"))); // NOI18N
@@ -121,14 +121,14 @@ public class map extends javax.swing.JFrame {
                 lanjutActionPerformed(evt);
             }
         });
-        getContentPane().add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, -1));
+        getContentPane().add(lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, -1, -1));
 
         newgame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/buttonnewgame.png"))); // NOI18N
         newgame.setBorder(null);
         newgame.setBorderPainted(false);
         newgame.setContentAreaFilled(false);
         newgame.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
+        getContentPane().add(newgame, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, -1, -1));
 
         namapasar.setFont(new java.awt.Font("DFPOP1-W9", 0, 24)); // NOI18N
         namapasar.setText("PASAR");
@@ -176,7 +176,7 @@ public class map extends javax.swing.JFrame {
         getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 140, 40));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/map.png"))); // NOI18N
-        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1412, 770));
+        getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -604,6 +604,7 @@ public class inpengolahan extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         nextpengolahan.setUndecorated(true);
+        nextpengolahan.setPreferredSize(new java.awt.Dimension(1366, 768));
         nextpengolahan.setSize(new java.awt.Dimension(1366, 768));
         nextpengolahan.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -906,7 +907,8 @@ public class inpengolahan extends javax.swing.JFrame {
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/inpengolahan2.png"))); // NOI18N
         background.setText("jLabel1");
-        nextpengolahan.getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, -1));
+        background.setPreferredSize(new java.awt.Dimension(1366, 768));
+        nextpengolahan.getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         popup.setUndecorated(true);
         popup.setSize(new java.awt.Dimension(552, 634));
@@ -964,6 +966,7 @@ public class inpengolahan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/back.png"))); // NOI18N

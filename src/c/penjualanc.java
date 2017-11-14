@@ -326,16 +326,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusBMe = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("18000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownismelon.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusBMe = true;
+                vshop.setStok(maset.getJmlProduk(username, 11, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("18000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownismelon.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -343,16 +348,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusBMa = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("20000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownismangga.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusBMa = true;
+                vshop.setStok(maset.getJmlProduk(username, 13, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("20000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownismangga.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -360,16 +370,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusBA = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("30000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownisapel.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusBA = true;
+                vshop.setStok(maset.getJmlProduk(username, 10, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("30000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownisapel.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -377,16 +392,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusBS = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("17000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownissemangka.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusBS = true;
+                vshop.setStok(maset.getJmlProduk(username, 12, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("17000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownissemangka.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -394,16 +414,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusBP = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("22000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownispisang.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusBP = true;
+                vshop.setStok(maset.getJmlProduk(username, 9, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("22000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/brownispisang.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -411,16 +436,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusJP = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/juspisang.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusJP = true;
+                vshop.setStok(maset.getJmlProduk(username, 2, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/juspisang.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -428,16 +458,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusJMa = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusmangga.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusJMa = true;
+                vshop.setStok(maset.getJmlProduk(username, 3, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusmangga.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -445,16 +480,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusJMe = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusmelon.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusJMe = true;
+                vshop.setStok(maset.getJmlProduk(username, 4, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusmelon.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -462,16 +502,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusJA = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusapel.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusJA = true;
+                vshop.setStok(maset.getJmlProduk(username, 1, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jusapel.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -479,16 +524,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusJS = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jussemangka.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusJS = true;
+                vshop.setStok(maset.getJmlProduk(username, 5, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/jussemangka.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -496,16 +546,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusKP = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("32000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikpisang.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusKP = true;
+                vshop.setStok(maset.getJmlProduk(username, 8, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("32000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikpisang.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -513,16 +568,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusKA = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("35000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikapel.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusKA = true;
+                vshop.setStok(maset.getJmlProduk(username, 6, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("35000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikapel.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -530,16 +590,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusKM = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("30000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikmangga.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusKM = true;
+                vshop.setStok(maset.getJmlProduk(username, 7, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("30000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/kripikmangga.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -547,16 +612,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusEs = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("6000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/esbuah.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusEs = true;
+                vshop.setStok(maset.getJmlProduk(username, 15, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("6000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/esbuah.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -564,16 +634,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusSale = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("45000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/sale.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusSale = true;
+                vshop.setStok(maset.getJmlProduk(username, 14, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("45000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/sale.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -581,16 +656,21 @@ public class penjualanc {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            statusSalad = true;
-            vshop.setJumlah("1");
-            vshop.setHarga("10000");
-            vshop.setKualitas("Baik");
-            vshop.popup().setVisible(true);
-            vshop.disable();
-            vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/salad.png")));
-            vshop.min.setVisible(false);
-            vshop.left.setVisible(false);
-            vshop.right.setVisible(true);
+            try {
+                statusSalad = true;
+                vshop.setStok(maset.getJmlProduk(username, 16, 1));
+                vshop.setJumlah("1");
+                vshop.setHarga("10000");
+                vshop.setKualitas("Baik");
+                vshop.popup().setVisible(true);
+                vshop.disable();
+                vshop.setGambar().setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui export/salad.png")));
+                vshop.min.setVisible(false);
+                vshop.left.setVisible(false);
+                vshop.right.setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(penjualanc.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -601,8 +681,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -658,8 +738,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -714,8 +794,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -770,8 +850,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -826,8 +906,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -882,8 +962,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -938,8 +1018,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -994,8 +1074,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1050,8 +1130,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1106,8 +1186,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1160,10 +1240,10 @@ public class penjualanc {
         int harga = vshop.getTeksHarga();
         int kualitas = mjual.getIdKualitas(vshop.getKualitas());
         int stok = maset.getJmlProduk(username, id, kualitas);
-        jml = vshop.getTeksJumlah();
+        jml = vshop.getTeksJumlah(); 
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1218,8 +1298,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1274,8 +1354,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1330,8 +1410,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1386,8 +1466,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
@@ -1442,8 +1522,8 @@ public class penjualanc {
         int stok = maset.getJmlProduk(username, id, kualitas);
         jml = vshop.getTeksJumlah();
         int tot = jml * harga;
-        if (stok > 1) {
-            if (stok > jml) {
+        if (stok >= 1) {
+            if (stok >= jml) {
                 int Pilih = JOptionPane.showConfirmDialog(null, "Total: " + tot
                         + "\nAnda jadi menjual?", "Konfirmasi Penjualan", JOptionPane.YES_NO_OPTION);
                 if (Pilih == 0) {
